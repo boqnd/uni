@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -27,11 +28,10 @@ int main() {
   if (moneySaved < phonePrice)
   {
     cout << "NO!" << endl;
-    cout << phonePrice - moneySaved << endl;
+    cout << fixed << setprecision(2) << phonePrice - moneySaved << endl;
   }else {
     cout << "YES!" << endl;
-    cout.precision(2);
-    cout << (moneySaved - phonePrice) << endl;
+    cout << std::fixed << std::setprecision(2) << (moneySaved - phonePrice) << endl;
   }
   
   return 0;
