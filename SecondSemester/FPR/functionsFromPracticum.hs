@@ -1,6 +1,44 @@
 main :: IO ()
 main = do
-  print(sumPrimeDivisors 1)
+  print(removeAllX' [1,2,3,1,2] 1)
+
+--Week 4
+countMembers :: [Int] -> Int
+countMembers xs = if (null xs) then 0 else 1 + countMembers(tail xs)
+
+arrSum :: [Int] -> Int
+arrSum xs = if (null xs) then 0 else ((head xs) + arrSum(tail xs))
+
+contains :: Int -> [Int] -> Bool
+contains n xs
+  | null xs = False
+  | head xs == n = True
+  | otherwise = contains n (tail xs)
+
+removeFirstX :: [Int] -> Int -> [Int]
+removeFirstX xs n = helper xs []
+  where
+    helper xs result
+      | null xs = result
+      | head xs /= n = helper (tail xs) (result ++ [head xs])
+      | otherwise = (result ++ (tail xs))
+
+removeAllX' :: [Int] -> Int -> [Int]
+removeAllX' xs n = [x | x <- xs, x /= n]
+
+
+removeAllX :: [Int] -> Int -> [Int]
+removeAllX xs n = helper xs []
+  where
+    helper xs result
+      | null xs = result
+      | head xs /= n = helper (tail xs) (result ++ [head xs])
+      | otherwise = if null (tail xs) then helper [] result else (helper (tail xs) (result ++ [(head (tail xs))]))
+
+incrementAllBy :: [Int] -> Int -> [Int]
+incrementAllBy xs n
+  | null (tail xs) = [(head xs) + n]
+  | otherwise = ((head xs) + n) : incrementAllBy (tail xs) n
 
 
 --Week 3
