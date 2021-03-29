@@ -1,9 +1,34 @@
 main :: IO ()
 main = do
-  --print(chunksOf 1)
-  print(divisors 0)
+  print ((derivative (\ x -> x*2) 1e-3) 10)
 
 
+--Week 6
+mIdentity :: a -> a
+mIdentity x = x
+
+myCompose :: (a -> b) -> (c -> a) -> (c -> b)
+myCompose f g = \ x -> f (g x)
+
+myNegate :: (a -> Bool) -> (a -> Bool)
+myNegate p = myCompose not p
+
+difference :: Num b => (a -> b) -> a -> a -> b
+difference f a b = f b - f a
+
+f = (\ x -> 2*x)
+
+derivative :: (Double -> Double) -> Double -> (Double -> Double)
+derivative f eps = \ x -> (f(x+eps) - f(x))/eps
+
+derivative2 :: (Double -> Double) -> Double -> (Double -> Double)
+derivative2 f eps = \ x -> derivative (derivative f eps) eps x
+
+derivativeN :: (Double -> Double) -> Int -> Double -> (Double -> Double)
+derivativeN f 0 _ = f
+derivativeN f n eps = derivative (derivative f (n-1) eps) eps
+
+--Week 5
 divisors :: Int -> [Int]
 divisors n = [x | x <- [1..n], n `mod` x == 0]
 
