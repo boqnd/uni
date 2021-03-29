@@ -1,6 +1,35 @@
 main :: IO ()
 main = do
-  print(removeAllX' [1,2,3,1,2] 1)
+  --print(chunksOf 1)
+  print(divisors 0)
+
+
+divisors :: Int -> [Int]
+divisors n = [x | x <- [1..n], n `mod` x == 0]
+
+isImage :: [Int] -> [Int] -> Bool
+isImage as bs = as == [d + (head as - head bs) | d <- bs]
+
+chunksOf :: Num a => Int -> [a] -> [[a]]
+chunksOf k xs
+  | null xs = []
+  | otherwise =  (take k xs) : chunksOf k (drop k xs)
+
+--ananase
+--
+-- numToList :: Int -> [Int]
+-- numToList 0 = []
+-- numToList x = numToList (x `div` 10) ++ [x `mod` 10]
+
+-- isAscending :: Int -> Bool 
+-- isAscending a = numToList a == listSort (numToList a)
+--   where 
+--     listSort:: [Int] -> [Int]
+--     listSort [] = []
+--     listSort (x:xs) = listSort smaller ++ [x] ++ listSort bigger
+--       where
+--       smaller = [s | s <- xs, s <= x]
+--
 
 --Week 4
 countMembers :: [Int] -> Int
