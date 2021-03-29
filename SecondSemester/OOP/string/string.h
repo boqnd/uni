@@ -5,7 +5,7 @@ class String {
 private:
   char* data;
 
-  void copy(const String);
+  void copy(const String&);
   void destroy();
   void setData(const char*);
   int length(const char*);
@@ -22,4 +22,5 @@ public:
   int length();
 
   friend std::ostream& operator<<(std::ostream& out, String&);
+  friend std::istream& operator>>(std::istream& in, String& str);
 };

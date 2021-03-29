@@ -4,7 +4,7 @@
 //=======
 
 //Copy other String data into this String
-void String::copy(const String other) {
+void String::copy(const String& other) {
   this->setData(other.data);
 }
 
@@ -87,9 +87,18 @@ int String::length() {
 
 //Out stream
 std::ostream& operator<<(std::ostream& out, String& str) {
-  for (size_t i = 0; i < str.length(); i++) {
-    out << str.data[i];
-  }
+  out << str.data;
+
   return out;
+}
+
+std::istream& operator>>(std::istream& in, String& str) {
+  char temp[128];
+
+  //getline(temp, in);
+
+  //this->setData(temp);
+
+  return in;
 }
 
