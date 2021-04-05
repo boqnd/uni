@@ -1,7 +1,33 @@
 main :: IO ()
 main = do
-  print ((derivative (\ x -> x*2) 1e-3) 10)
+  print (insert' 7 [1,5,6])
 
+--Week 7
+primesInRange :: Integer -> Integer -> [Integer]
+primesInRange a b = [x | x <- [a..b], isPrime x]
+  where
+    isPrime b = [x | x<-[2..b], b `mod` x == 0] == [b]
+
+prodSumDiv :: [Integer] -> Integer -> Integer
+prodSumDiv ls k = product [x | x <- ls, (sumDivisors x) `mod` k == 0]
+  where 
+    sumDivisors x = sum [a | a <- [1..x], x `mod` a == 0] 
+
+isSorted :: [Int] -> Bool
+isSorted [] = True
+isSorted [_] = True
+isSorted (x:y:ls) = if x < y then isSorted(y:ls) else False
+
+insert :: Int -> [Int] -> [Int]
+insert x xs 
+  | null xs = [x]
+  | x < head xs = (x:xs)
+  | x > last xs = (xs ++ [x])
+  | otherwise = [n | n <- [head xs..last xs], elem n xs || n == x]
+
+insert' :: Int -> [Int] -> [Int]
+insert' k [] = [k] 
+insert' k (x:xs) = if k < x then k:insert' x xs else x:insert' k xs
 
 --Week 6
 mIdentity :: a -> a
@@ -24,9 +50,9 @@ derivative f eps = \ x -> (f(x+eps) - f(x))/eps
 derivative2 :: (Double -> Double) -> Double -> (Double -> Double)
 derivative2 f eps = \ x -> derivative (derivative f eps) eps x
 
-derivativeN :: (Double -> Double) -> Int -> Double -> (Double -> Double)
-derivativeN f 0 _ = f
-derivativeN f n eps = derivative (derivative f (n-1) eps) eps
+-- derivativeN :: (Double -> Double) -> Int -> Double -> (Double -> Double)
+-- derivativeN f 0 _ = f
+-- derivativeN f n eps = derivative (derivative f (n-1) eps) eps
 
 --Week 5
 divisors :: Int -> [Int]
