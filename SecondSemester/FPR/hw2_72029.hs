@@ -1,20 +1,37 @@
 main :: IO ()
 main = do
-  print ("First task")
-  print ("----------")
-  print (countRats ")1)1)1)1 P")
-  print (countRats "P 1( 1( )1 1(")
-  print (countRats " P1(1( )11(")
-  print (countRats ")1)1)1)1P)1)11(")
-  print (countRats "1()1)1)11(1()1)1P)11()1)1)11(1(1(1(")
-  print()
-  print ("Second task")
-  print ("-----------")
-  print ((josephus [1,2,3,4,5,6,7]) 3)
-  print ((josephus [1,2,3,4,5,6,7]) (-1))
-  print ((josephus [1,2,3,4,5,6,7,8,9,10]) 1)
-  print ((josephus [1,2,3,4,5,6,7,8,9,10]) 2)
-  print ((josephus "fpFMIsu") 4)
+  -- print ("First task")
+  -- print ("----------")
+  -- print (countRats ")1)1)1)1 P")
+  -- print (countRats "P 1( 1( )1 1(")
+  -- print (countRats " P1(1( )11(")
+  -- print (countRats ")1)1)1)1P)1)11(")
+  -- print (countRats "1()1)1)11(1()1)1P)11()1)1)11(1(1(1(")
+  -- print()
+  -- print ("Second task")
+  -- print ("-----------")
+  print ((josephusAnanase [1,2,3,4,5,6,7]) 3)
+  print ((josephusAnanase [1,2,3,4,5,6,7]) (-1))
+  print ((josephusAnanase [1,2,3,4,5,6,7,8,9,10]) 1)
+  print ((josephusAnanase [1,2,3,4,5,6,7,8,9,10]) 2)
+  print ((josephusAnanase "fpFMIsu") 4)
+  -- josephusAnanase
+  -- print $ countRats' "1()1)1)11(1()1)1P)11()1)1)11(1(1(1("
+  --print(countrats "2$") error "schupi se"
+--countRats ")1)1)1)1 P" → 0 -- всички плъхове се движат към ловеца
+--countRats "P 1( 1( )1 1(" → 1
+
+countRats' :: String -> Int
+countRats' str = helper str False
+  where
+    helper :: String -> Bool -> Int
+    helper str hunterFound
+      | null str = 0
+      | hunterFound == False && head str == '(' = (helper (tail str) hunterFound) + 1
+      | hunterFound == False && head str == 'P' = helper (tail str) True
+      | hunterFound == False = helper (tail str) hunterFound
+      | hunterFound == True && head str == ')' = (helper (tail str) hunterFound) + 1
+      | hunterFound == True = helper (tail str) hunterFound
 
 
 countRats :: String -> Int
@@ -48,3 +65,21 @@ josephus xs = helper
               takeElement (x:xs) n = takeElement xs (n-1)
               removeElement [x] _ = []
               removeElement xs n = drop n xs ++ take (n-1) xs
+
+
+josephusAnanase ::Eq a => [a] -> (Int -> [a])
+josephusAnanase xs = \ x ->  helper x 1 xs []
+    where
+        helper k n (x:xs) answer
+            |null xs = (answer ++ [x]) 
+            |n `mod` k == 0 = helper k (n + 1) xs (answer ++ [x])
+            |otherwise = helper k (n + 1) (xs ++ [x]) answer
+
+
+josephusAnanase' :: Eq a => [a] -> (Int -> [a])
+josephusAnanase' xs = \ x -> helper x 1 xs []
+    where
+        helper k n (x:xs) answer
+            |null xs = (reverse ([x] ++ answer))
+            |n `mod` k == 0 = helper k (n + 1) xs (reverse ([x] ++ answer))
+            |otherwise = helper k (n + 1) (xs ++ [x]) answer
