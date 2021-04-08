@@ -1,0 +1,6 @@
+Manufacturer: , Free Space: 0, All Space: 0, Overwittenable: false, Price: 0, Format: CD-ROM
+Manufacturer: CDcompany, Free Space: 150, All Space: 150, Overwittenable: true, Price: 2.5, Format: CD-ROM
+Manufacturer: , Free Space: 0, All Space: 0, Overwittenable: false, Price: 0, Format: CD-ROM
+Manufacturer: CDcompany, Free Space: 150, All Space: 150, Overwittenable: true, Price: 2.5, Format: CD-ROM
+Manufacturer: , Free Space: 0, All Space: 0, Overwittenable: false, Price: 0, Format: CD-ROM
+Manufacturer: CDcompany, Free Space: 150, All Space: 150, Overwittenable: true, Price: 2.5, Format: CD-ROM
