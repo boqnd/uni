@@ -1,6 +1,86 @@
 main :: IO ()
 main = do
-  print(removeAllX' [1,2,3,1,2] 1)
+  print (insert' 7 [1,5,6])
+
+--Week 7
+primesInRange :: Integer -> Integer -> [Integer]
+primesInRange a b = [x | x <- [a..b], isPrime x]
+  where
+    isPrime b = [x | x<-[2..b], b `mod` x == 0] == [b]
+
+prodSumDiv :: [Integer] -> Integer -> Integer
+prodSumDiv ls k = product [x | x <- ls, (sumDivisors x) `mod` k == 0]
+  where 
+    sumDivisors x = sum [a | a <- [1..x], x `mod` a == 0] 
+
+isSorted :: [Int] -> Bool
+isSorted [] = True
+isSorted [_] = True
+isSorted (x:y:ls) = if x < y then isSorted(y:ls) else False
+
+insert :: Int -> [Int] -> [Int]
+insert x xs 
+  | null xs = [x]
+  | x < head xs = (x:xs)
+  | x > last xs = (xs ++ [x])
+  | otherwise = [n | n <- [head xs..last xs], elem n xs || n == x]
+
+insert' :: Int -> [Int] -> [Int]
+insert' k [] = [k] 
+insert' k (x:xs) = if k < x then k:insert' x xs else x:insert' k xs
+
+--Week 6
+mIdentity :: a -> a
+mIdentity x = x
+
+myCompose :: (a -> b) -> (c -> a) -> (c -> b)
+myCompose f g = \ x -> f (g x)
+
+myNegate :: (a -> Bool) -> (a -> Bool)
+myNegate p = myCompose not p
+
+difference :: Num b => (a -> b) -> a -> a -> b
+difference f a b = f b - f a
+
+f = (\ x -> 2*x)
+
+derivative :: (Double -> Double) -> Double -> (Double -> Double)
+derivative f eps = \ x -> (f(x+eps) - f(x))/eps
+
+derivative2 :: (Double -> Double) -> Double -> (Double -> Double)
+derivative2 f eps = \ x -> derivative (derivative f eps) eps x
+
+-- derivativeN :: (Double -> Double) -> Int -> Double -> (Double -> Double)
+-- derivativeN f 0 _ = f
+-- derivativeN f n eps = derivative (derivative f (n-1) eps) eps
+
+--Week 5
+divisors :: Int -> [Int]
+divisors n = [x | x <- [1..n], n `mod` x == 0]
+
+isImage :: [Int] -> [Int] -> Bool
+isImage as bs = as == [d + (head as - head bs) | d <- bs]
+
+chunksOf :: Num a => Int -> [a] -> [[a]]
+chunksOf k xs
+  | null xs = []
+  | otherwise =  (take k xs) : chunksOf k (drop k xs)
+
+--ananase
+--
+-- numToList :: Int -> [Int]
+-- numToList 0 = []
+-- numToList x = numToList (x `div` 10) ++ [x `mod` 10]
+
+-- isAscending :: Int -> Bool 
+-- isAscending a = numToList a == listSort (numToList a)
+--   where 
+--     listSort:: [Int] -> [Int]
+--     listSort [] = []
+--     listSort (x:xs) = listSort smaller ++ [x] ++ listSort bigger
+--       where
+--       smaller = [s | s <- xs, s <= x]
+--
 
 --Week 4
 countMembers :: [Int] -> Int
