@@ -1,5 +1,4 @@
-#include <iostream>
-#include "student.cpp"
+#include "include/index.h"
 
 int main() {
 

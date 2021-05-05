@@ -1,6 +1,6 @@
-#include "student.h"
-#include <cstring>
-#include <iostream>
+#pragma once
+
+#include "../../../../include/student.h"
 
 Student::Student () {
   name = new char[0];
