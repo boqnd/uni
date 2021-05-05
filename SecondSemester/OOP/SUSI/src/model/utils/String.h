@@ -11,7 +11,7 @@ private:
   void copy(const String&);
   void destroy();
   void setData(const char*);
-  int length(const char*);
+  int length(const char*) const;
 
 public:
   String();
@@ -19,10 +19,17 @@ public:
   String(const char*);
   String& operator=(const String&);
   String& operator=(const char*);
-  char operator[](const unsigned int);
+  bool operator==(const String&);
+  bool operator==(const char*);
+
+  //char operator[](const unsigned int);
+  char operator[](const unsigned int) const;
+
   ~String();
 
-  int length();
+  //int length();
+  int length() const;
+
 
   friend std::ostream& operator<<(std::ostream& out, String&);
   friend std::ostream& operator<<(std::ostream& out, const String&);
@@ -53,7 +60,7 @@ void String::destroy() {
 }
 
 //Get length of `other` char*
-int String::length(const char* other) {
+int String::length(const char* other) const{
   int length = 0;
   while (other[length] != '\0') { length++; }
   return length;
@@ -88,6 +95,42 @@ String& String::operator=(const String& other) {
   return *this;
 }
 
+bool String::operator==(const String& other) {
+  int index = 0;
+  while (other[index] != '\0') { 
+    if (this->data[index] != other[index])
+    {
+      return false;
+    }
+    index++;
+  }
+
+  if (this->data[index] == '\0')
+  {
+    return true;
+  }else {
+    return false;
+  }
+}
+
+bool String::operator==(const char* other) {
+  int index = 0;
+  while (other[index] != '\0') { 
+    if (this->data[index] != other[index])
+    {
+      return false;
+    }
+    index++;
+  }
+
+  if (this->data[index] == '\0')
+  {
+    return true;
+  }else {
+    return false;
+  }
+}
+
 //Operator= with `other` char*
 String& String::operator=(const char* other) {
   this->destroy();
@@ -96,7 +139,14 @@ String& String::operator=(const char* other) {
 }
 
 //Operator[] returns the `i`-th char of the string, or '\0'
-char String::operator[](const unsigned int i) {
+// char String::operator[](const unsigned int i) {
+//   if(i < this->length()) {
+//     return this->data[i];
+//   }
+//   return '\0';
+// }
+
+char String::operator[](const unsigned int i) const {
   if(i < this->length()) {
     return this->data[i];
   }
@@ -109,7 +159,7 @@ String::~String() {
 }
 
 //Get length of this String
-int String::length() {
+int String::length() const{
   return length(this->data);
 }
 

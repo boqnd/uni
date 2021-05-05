@@ -1,7 +1,6 @@
 #include "include/index.h"
 
 int main() {
-
   Program p;
   Discipline d;
   Discipline d1;
@@ -10,7 +9,7 @@ int main() {
   ds.push_back(d);
   ds.push_back(d1);
 
-  std::cout << ds.getSize() << std::endl; 
+  //std::cout << ds.getSize() << std::endl; 
 
   String progName = "IS";
   p.setName(progName);
@@ -24,6 +23,7 @@ int main() {
   st.advance();
   st.interrupt();
   st.graduate();
+  st.change("program", "kn");
   st.print();
   //st.enroll(72029, "IS", 1)
     // .print()

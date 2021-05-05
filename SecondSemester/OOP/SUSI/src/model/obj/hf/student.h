@@ -7,7 +7,7 @@ private:
   String name;
   unsigned int fn;
   Program program;
-  unsigned int groupe;
+  unsigned int group;
   unsigned int year;
   Status status;
   double averageGrade;
@@ -23,7 +23,7 @@ public:
   const String getName() const;
   const unsigned int getFn() const;
   const Program getProgram() const;
-  const unsigned int getGroupe() const;
+  const unsigned int getGroup() const;
   const unsigned int getYear() const;
   const Status getStatus() const;
   const double getAverageGrade() const;
@@ -31,14 +31,14 @@ public:
   void setName(String&);
   void setFn(unsigned int);
   void setProgram(Program&);
-  void setGroupe(unsigned int);
+  void setGroup(unsigned int);
   void setYear(unsigned int);
   void setStatus(Status);
   
   void print ();
-  void enroll (unsigned int fn, Program program, unsigned int groupe);
+  void enroll (unsigned int fn, Program program, unsigned int group);
   void advance ();
-  void change (char* option, char* value);
+  void change (String option, String value);
   void graduate ();
   void interrupt ();
   void resume ();

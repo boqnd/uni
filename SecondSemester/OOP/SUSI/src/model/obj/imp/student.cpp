@@ -9,7 +9,7 @@ Student::Student() {
   this->name = defaultString;
   this->fn = 0;
   this->program = defaultProgram;
-  this->groupe = 0;
+  this->group = 0;
   this->year = 0;
   this->status = NotEnrolled;
   this->averageGrade = 0;
@@ -19,7 +19,7 @@ Student::Student(Student& other) {
   this->name = other.getName();
   this->fn = other.getFn();
   this->program = other.getProgram();
-  this->groupe = other.getGroupe();
+  this->group = other.getGroup();
   this->year = other.getYear();
   this->status = other.getStatus();
   this->averageGrade = other.getAverageGrade();
@@ -29,7 +29,7 @@ Student::Student(const Student& other) {
   this->name = other.getName();
   this->fn = other.getFn();
   this->program = other.getProgram();
-  this->groupe = other.getGroupe();
+  this->group = other.getGroup();
   this->year = other.getYear();
   this->status = other.getStatus();
   this->averageGrade = other.getAverageGrade();
@@ -39,7 +39,7 @@ Student& Student::operator=(const Student& other) {
   this->name = other.getName();
   this->fn = other.getFn();
   this->program = other.getProgram();
-  this->groupe = other.getGroupe();
+  this->group = other.getGroup();
   this->year = other.getYear();
   this->status = other.getStatus();
   this->averageGrade = other.getAverageGrade();
@@ -54,7 +54,7 @@ Student::~Student() {
   this->name = defaultString;
   this->fn = 0;
   this->program = defaultProgram;
-  this->groupe = 0;
+  this->group = 0;
   this->year = 0;
   this->status = NotEnrolled;
   this->averageGrade = 0;
@@ -72,8 +72,8 @@ void Student::setProgram (Program& _program) {
   this->program = _program;
 }
 
-void Student::setGroupe (unsigned int _groupe) {
-  this->groupe = _groupe;
+void Student::setGroup (unsigned int _group) {
+  this->group = _group;
 }
 
 void Student::setYear (unsigned int _year) {
@@ -96,8 +96,8 @@ const Program Student::getProgram() const {
   return this->program;
 }
 
-const unsigned int Student::getGroupe() const {
-  return this->groupe;
+const unsigned int Student::getGroup() const {
+  return this->group;
 }
 
 const unsigned int Student::getYear() const {
@@ -118,17 +118,17 @@ void Student::print () {
   std::cout << "---------------" << std::endl;
   std::cout << "Name: " << this->name << std::endl;
   std::cout << "Program: " << this->program.getName() << std::endl;
-  std::cout << "Groupe: " << this->groupe << std::endl;
+  std::cout << "Group: " << this->group << std::endl;
   std::cout << "Year: " << this->year << std::endl;
   std::cout << "Status: " << this->status << " (0: not enrolled, 1: interupted, 2: enrolled, 3: graduated)" << std::endl;
   std::cout << "Average Grade: " << this->averageGrade << std::endl;
   std::cout << std::endl;
 }
 
-void Student::enroll (unsigned int _fn, Program _program, unsigned int _groupe) {
+void Student::enroll (unsigned int _fn, Program _program, unsigned int _group) {
   this->setFn(_fn);
   this->setProgram(_program);
-  this->setGroupe(_groupe);
+  this->setGroup(_group);
   this->setYear(1);
   this->setStatus(Enrolled);
 }
@@ -137,8 +137,18 @@ void Student::advance () {
   this->setYear(this->getYear() + 1);
 }
 
-void Student::change (char* option, char* value) {
-  //not now
+void Student::change (String option, String value) {
+  if (option == "program")
+  {
+    Program newProgram;
+    newProgram.setName(value);
+    this->program = newProgram;
+  } else if(option == "group") {
+    this->group = value[0] - '0';
+  }else if(option == "year") {
+    this->year = value[0] - '0';
+  }
+  //more to do
 }
 
 void Student::graduate () {
