@@ -25,6 +25,16 @@ Student::Student(Student& other) {
   this->averageGrade = other.getAverageGrade();
 }
 
+Student::Student(const Student& other) {
+  this->name = other.getName();
+  this->fn = other.getFn();
+  this->program = other.getProgram();
+  this->groupe = other.getGroupe();
+  this->year = other.getYear();
+  this->status = other.getStatus();
+  this->averageGrade = other.getAverageGrade();
+}
+
 Student& Student::operator=(const Student& other) {
   this->name = other.getName();
   this->fn = other.getFn();

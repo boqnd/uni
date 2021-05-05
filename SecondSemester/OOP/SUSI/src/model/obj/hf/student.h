@@ -16,6 +16,7 @@ private:
 public:
   Student();
   Student(Student&);
+  Student(const Student&);
   Student& operator=(const Student&);
   ~Student();
 

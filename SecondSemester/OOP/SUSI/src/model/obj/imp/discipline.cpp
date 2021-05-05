@@ -16,6 +16,12 @@ Discipline::Discipline(Discipline& other) {
   this->year = other.getYear();
 }
 
+Discipline::Discipline(const Discipline& other) {
+  this->name = other.getName();
+  this->required = other.isRequired();
+  this->year = other.getYear();
+}
+
 Discipline& Discipline::operator=(const Discipline& other) {
   this->name = other.getName();
   this->required = other.isRequired();

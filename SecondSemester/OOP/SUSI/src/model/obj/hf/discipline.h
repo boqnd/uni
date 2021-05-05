@@ -11,6 +11,7 @@ private:
 public:
   Discipline();
   Discipline(Discipline&);
+  Discipline(const Discipline&);
   Discipline& operator=(const Discipline&);
   ~Discipline();
 
