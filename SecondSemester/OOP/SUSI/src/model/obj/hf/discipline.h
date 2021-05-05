@@ -13,4 +13,8 @@ public:
   Discipline(Discipline&);
   Discipline& operator=(const Discipline&);
   ~Discipline();
+
+  const String getName() const;
+  const bool isRequired() const;
+  const unsigned int getYear() const;
 };

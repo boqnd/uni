@@ -25,6 +25,7 @@ public:
   int length();
 
   friend std::ostream& operator<<(std::ostream& out, String&);
+  friend std::ostream& operator<<(std::ostream& out, const String&);
   friend std::istream& operator>>(std::istream& in, String& str);
 };
 
@@ -114,6 +115,12 @@ int String::length() {
 
 //Out stream
 std::ostream& operator<<(std::ostream& out, String& str) {
+  out << str.data;
+
+  return out;
+}
+
+std::ostream& operator<<(std::ostream& out, const String& str) {
   out << str.data;
 
   return out;

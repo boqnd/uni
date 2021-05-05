@@ -1,44 +1,47 @@
 #pragma once
 
+#include "../../../../include/student.h"
+
 class Student{
 private:
-  char* name;
+  String name;
   unsigned int fn;
-  //Program program;
-  char* program;
+  Program program;
   unsigned int groupe;
   unsigned int year;
-  char* status;
+  Status status;
   double averageGrade;
 
-  void calculateAverageGrade();
-
-  Student& setName(char*);
-  Student& setFn(unsigned int);
-  Student& setProgram(char*);
-  Student& setGroupe(unsigned int);
-  Student& setYear(unsigned int);
-  Student& setStatus(char*);
-
+  // void calculateAverageGrade();
 public:
   Student();
+  Student(Student&);
+  Student& operator=(const Student&);
+  ~Student();
 
-  char* getName();
-  unsigned int getFn();
-  char* getProgram();
-  unsigned int getGroupe();
-  unsigned int getYear();
-  char* getStatus();
-  double getAverageGrade();
+  const String getName() const;
+  const unsigned int getFn() const;
+  const Program getProgram() const;
+  const unsigned int getGroupe() const;
+  const unsigned int getYear() const;
+  const Status getStatus() const;
+  const double getAverageGrade() const;
+
+  void setName(String&);
+  void setFn(unsigned int);
+  void setProgram(Program&);
+  void setGroupe(unsigned int);
+  void setYear(unsigned int);
+  void setStatus(Status);
   
-  Student& print ();
-  Student& enroll (unsigned int fn, char* program, unsigned int groupe);
-  Student& advance ();
-  Student& change (char* option, char* value);
-  Student& graduate ();
-  Student& interrupt ();
-  Student& resume ();
-  Student& enrollin (char* course);
-  Student& addGrade (char* course, double grade);
-  Student& report ();
+  void print ();
+  void enroll (unsigned int fn, Program program, unsigned int groupe);
+  void advance ();
+  void change (char* option, char* value);
+  void graduate ();
+  void interrupt ();
+  void resume ();
+  void enrollin (char* course);
+  void addGrade (Discipline discipline, double grade);
+  void report ();
 };

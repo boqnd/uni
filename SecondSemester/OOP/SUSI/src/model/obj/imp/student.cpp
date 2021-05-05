@@ -2,157 +2,157 @@
 
 #include "../../../../include/student.h"
 
-Student::Student () {
-  name = new char[0];
-  fn = 0;
-  program = new char[0];
-  groupe = 0;
-  year = 0;
-  status = new char[0];
-  averageGrade = 0;
+Student::Student() {
+  String defaultString;
+  Program defaultProgram;
+
+  this->name = defaultString;
+  this->fn = 0;
+  this->program = defaultProgram;
+  this->groupe = 0;
+  this->year = 0;
+  this->status = NotEnrolled;
+  this->averageGrade = 0;
 }
 
-Student& Student::setName (char* _name) {
-  if (_name != nullptr)
-  {
-    this->name = new char[strlen(_name) + 1];
-    strcpy(this->name, _name);
-  }
+Student::Student(Student& other) {
+  this->name = other.getName();
+  this->fn = other.getFn();
+  this->program = other.getProgram();
+  this->groupe = other.getGroupe();
+  this->year = other.getYear();
+  this->status = other.getStatus();
+  this->averageGrade = other.getAverageGrade();
+}
+
+Student& Student::operator=(const Student& other) {
+  this->name = other.getName();
+  this->fn = other.getFn();
+  this->program = other.getProgram();
+  this->groupe = other.getGroupe();
+  this->year = other.getYear();
+  this->status = other.getStatus();
+  this->averageGrade = other.getAverageGrade();
+
   return *this;
 }
 
-Student& Student::setFn (unsigned int _fn) {
+Student::~Student() {
+  String defaultString;
+  Program defaultProgram;
+
+  this->name = defaultString;
+  this->fn = 0;
+  this->program = defaultProgram;
+  this->groupe = 0;
+  this->year = 0;
+  this->status = NotEnrolled;
+  this->averageGrade = 0;
+}
+
+void Student::setName(String& _name) {
+  this->name = _name;
+}
+
+void Student::setFn(unsigned int _fn) {
   this->fn = _fn;
-  return *this;
 }
 
-Student& Student::setProgram (char* _program) {
-  if (_program != nullptr)
-  {
-    this->program = new char[strlen(_program) + 1];
-    strcpy(this->program, _program);
-  }
-  return *this;
+void Student::setProgram (Program& _program) {
+  this->program = _program;
 }
 
-Student& Student::setGroupe (unsigned int _groupe) {
+void Student::setGroupe (unsigned int _groupe) {
   this->groupe = _groupe;
-  return *this;
 }
 
-Student& Student::setYear (unsigned int _year) {
+void Student::setYear (unsigned int _year) {
   this->year = _year;
-  return *this;
 }
 
-Student& Student::setStatus (char* _status) {
-  if (_status != nullptr)
-  {
-    this->status = new char[strlen(_status) + 1];
-    strcpy(this->status, _status);
-  }
-  return *this;
+void Student::setStatus (Status _status) {
+  this->status = _status;
 }
 
-char* Student::getName () {
+const String Student::getName() const {
   return this->name;
 }
 
-unsigned int Student::getFn () {
+const unsigned int Student::getFn() const {
   return this->fn;
 }
 
-char* Student::getProgram () {
+const Program Student::getProgram() const {
   return this->program;
 }
 
-unsigned int Student::getGroupe () {
+const unsigned int Student::getGroupe() const {
   return this->groupe;
 }
 
-unsigned int Student::getYear () {
+const unsigned int Student::getYear() const {
   return this->year;
 }
 
-char* Student::getStatus () {
+const Status Student::getStatus() const {
   return this->status;
 }
 
-double Student::getAverageGrade () {
+const double Student::getAverageGrade() const {
   return this->averageGrade;
 }
 
-Student& Student::print () {
+void Student::print () {
   std::cout << std::endl;
   std::cout << "Student " << this->fn << std::endl;
   std::cout << "---------------" << std::endl;
   std::cout << "Name: " << this->name << std::endl;
-  std::cout << "Program: " << this->program << std::endl;
+  std::cout << "Program: " << this->program.getName() << std::endl;
   std::cout << "Groupe: " << this->groupe << std::endl;
   std::cout << "Year: " << this->year << std::endl;
-  std::cout << "Status: " << this->status << std::endl;
+  std::cout << "Status: " << this->status << " (0: not enrolled, 1: interupted, 2: enrolled, 3: graduated)" << std::endl;
   std::cout << "Average Grade: " << this->averageGrade << std::endl;
   std::cout << std::endl;
-
-  return *this;
 }
 
-Student& Student::enroll (unsigned int _fn, char* _program, unsigned int _groupe) {
+void Student::enroll (unsigned int _fn, Program _program, unsigned int _groupe) {
   this->setFn(_fn);
   this->setProgram(_program);
   this->setGroupe(_groupe);
   this->setYear(1);
-  this->setStatus("Enrolled");
-
-  return *this;
+  this->setStatus(Enrolled);
 }
 
-Student& Student::advance () {
+void Student::advance () {
   this->setYear(this->getYear() + 1);
-
-  return *this;
 }
 
-Student& Student::change (char* option, char* value) {
+void Student::change (char* option, char* value) {
   //not now
-
-  return *this;
 }
 
-Student& Student::graduate () {
-  this->setStatus("Gradueted");
-
-  return *this;
+void Student::graduate () {
+  this->setStatus(Gradueted);
 }
 
-Student& Student::interrupt () {
-  this->setStatus("Interupted");
-
-  return *this;
+void Student::interrupt () {
+  this->setStatus(Interupted);
 }
 
-Student& Student::resume () {
-  this->setStatus("Enrolled");
-
-  return *this;
+void Student::resume () {
+  this->setStatus(Enrolled);
 }
 
-Student& Student::enrollin (char* course) {
+void Student::enrollin (char* course) {
   //not now
-
-  return *this;
 }
 
-Student& Student::addGrade (char* course, double grade) {
+void Student::addGrade (Discipline discipline, double grade) {
   //not now
-
-  return *this;
 }
 
-Student& Student::report () {
+void Student::report () {
   //not now
-
-  return *this;
 }
 
 
