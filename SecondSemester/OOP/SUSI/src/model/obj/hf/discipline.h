@@ -18,4 +18,11 @@ public:
   const String getName() const;
   const bool isRequired() const;
   const unsigned int getYear() const;
+
+  void setName(String&);
+  void setName(const char*);
+  void setRequired(bool);
+  void setYear(unsigned int);
+
+  void saveToFile(char* fileName);
 };

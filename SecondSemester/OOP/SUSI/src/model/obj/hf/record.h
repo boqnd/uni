@@ -18,4 +18,6 @@ public:
   const Student getStudent() const;
   const Discipline getDiscipline() const;
   const double getGrade() const;
+
+  void saveToFile(char* fileName);
 };

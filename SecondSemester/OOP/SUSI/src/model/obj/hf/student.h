@@ -45,4 +45,6 @@ public:
   void enrollin (char* course);
   void addGrade (Discipline discipline, double grade);
   void report ();
+
+  void saveToFile(char* fileName);
 };

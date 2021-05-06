@@ -51,3 +51,13 @@ const Discipline Record::getDiscipline() const {
 const double Record::getGrade() const {
   return this->grade;
 }
+
+void Record::saveToFile(char* fileName) {
+  std::ofstream out (fileName, std::ofstream::app);
+
+  out <<  this->student.getFn() << " " <<
+          this->discipline.getName() << " " <<
+          this->grade << std::endl;
+
+  out.close();
+}

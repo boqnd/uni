@@ -18,4 +18,11 @@ public:
   const Vector<Discipline> getDisciplines() const;
 
   void setName(String&);
+  void setDisciplines(Vector<Discipline>&);
+
+  void addDiscipline(Discipline&);
+
+
+
+  void saveToFile(char* fileName);
 };

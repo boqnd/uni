@@ -3,9 +3,7 @@
 #include "../../../../include/discipline.h"
 
 Discipline::Discipline() {
-  String defaultString;
-
-  this->name = defaultString;
+  this->name = "<no-discipline>";
   this->required = false;
   this->year = 0;
 }
@@ -48,4 +46,30 @@ const bool Discipline::isRequired() const {
 
 const unsigned int Discipline::getYear() const {
   return this->year;
+}
+
+void Discipline::setName(String& _name) {
+  this->name = _name;
+}
+
+void Discipline::setName(const char* _name) {
+  this->name = _name;
+}
+
+void Discipline::setRequired(bool _required) {
+  this->required = _required;
+}
+
+void Discipline::setYear(unsigned int _year) {
+  this->year = _year;
+}
+
+void Discipline::saveToFile(char* fileName) {
+  std::ofstream out (fileName, std::ofstream::app);
+
+  out <<  this->name << " " <<
+          this->required << " " <<
+          this->year << std::endl;
+
+  out.close();
 }

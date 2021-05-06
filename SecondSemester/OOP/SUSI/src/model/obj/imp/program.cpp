@@ -3,10 +3,9 @@
 #include "../../../../include/program.h"
 
 Program::Program() {
-  String defaultString;
   Vector<Discipline> defaultVector;
 
-  this->name = defaultString;
+  this->name = "<no-program>";
   this->disciplines = defaultVector;
 }
 
@@ -45,4 +44,28 @@ const Vector<Discipline> Program::getDisciplines() const {
 
 void Program::setName(String& other) {
   this->name = other;
+}
+
+void Program::setDisciplines(Vector<Discipline>& _disciplines) {
+  this->disciplines = _disciplines;
+}
+
+void Program::addDiscipline(Discipline& _discipline) {
+  this->disciplines.push_back(_discipline);
+}
+
+void Program::saveToFile(char* fileName) {
+  std::ofstream out (fileName, std::ofstream::app);
+
+  out <<  this->name << " " <<
+          this->disciplines.getSize();
+
+  for (size_t i = 0; i < disciplines.getSize(); i++)
+  {
+    out << " " << disciplines[i].getName();
+  }
+  
+  out << std::endl;
+
+  out.close();
 }

@@ -3,10 +3,9 @@
 #include "../../../../include/student.h"
 
 Student::Student() {
-  String defaultString;
   Program defaultProgram;
 
-  this->name = defaultString;
+  this->name = "<no-name>";
   this->fn = 0;
   this->program = defaultProgram;
   this->group = 0;
@@ -112,7 +111,7 @@ const double Student::getAverageGrade() const {
   return this->averageGrade;
 }
 
-void Student::print () {
+void Student::print() {
   std::cout << std::endl;
   std::cout << "Student " << this->fn << std::endl;
   std::cout << "---------------" << std::endl;
@@ -125,7 +124,7 @@ void Student::print () {
   std::cout << std::endl;
 }
 
-void Student::enroll (unsigned int _fn, Program _program, unsigned int _group) {
+void Student::enroll(unsigned int _fn, Program _program, unsigned int _group) {
   this->setFn(_fn);
   this->setProgram(_program);
   this->setGroup(_group);
@@ -133,11 +132,11 @@ void Student::enroll (unsigned int _fn, Program _program, unsigned int _group) {
   this->setStatus(Enrolled);
 }
 
-void Student::advance () {
+void Student::advance() {
   this->setYear(this->getYear() + 1);
 }
 
-void Student::change (String option, String value) {
+void Student::change(String option, String value) {
   if (option == "program")
   {
     Program newProgram;
@@ -151,15 +150,15 @@ void Student::change (String option, String value) {
   //more to do
 }
 
-void Student::graduate () {
+void Student::graduate() {
   this->setStatus(Gradueted);
 }
 
-void Student::interrupt () {
+void Student::interrupt() {
   this->setStatus(Interupted);
 }
 
-void Student::resume () {
+void Student::resume() {
   this->setStatus(Enrolled);
 }
 
@@ -175,6 +174,19 @@ void Student::report () {
   //not now
 }
 
+void Student::saveToFile(char* fileName) {
+  std::ofstream out (fileName, std::ofstream::app);
+
+  out <<  this->name << " " <<
+          this->fn << " " <<
+          this->program.getName() << " " <<
+          this->group << " " <<
+          this->year << " " <<
+          this->status << " " <<
+          this->averageGrade << std::endl;
+
+  out.close();
+}
 
 
 
