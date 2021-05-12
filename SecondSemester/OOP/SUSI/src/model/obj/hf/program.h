@@ -5,7 +5,7 @@
 class Program {
 private:
   String name;
-  Vector<Discipline> disciplines;
+  Vector<Discipline*> disciplines;
 
 public:
   Program();
@@ -15,12 +15,12 @@ public:
   ~Program();
 
   const String getName() const;
-  const Vector<Discipline> getDisciplines() const;
+  const Vector<Discipline*>& getDisciplines() const;
 
   void setName(String&);
-  void setDisciplines(Vector<Discipline>&);
+  void setDisciplines(Vector<Discipline*>&);
 
-  void addDiscipline(Discipline&);
+  void addDiscipline(Discipline*);
 
 
 

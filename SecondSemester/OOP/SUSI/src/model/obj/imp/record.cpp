@@ -3,11 +3,8 @@
 #include "../../../../include/record.h"
 
 Record::Record() {
-  Student defaultStudent;
-  Discipline defaultDiscipline;
-
-  this->student = defaultStudent;
-  this->discipline = defaultDiscipline;
+  this->student = nullptr;
+  this->discipline = nullptr;
   this->grade = 0;
 }
 
@@ -32,19 +29,16 @@ Record& Record::operator=(const Record& other) {
 }
 
 Record::~Record() {
-  Student defaultStudent;
-  Discipline defaultDiscipline;
-
-  this->student = defaultStudent;
-  this->discipline = defaultDiscipline;
+  this->student = nullptr;
+  this->discipline = nullptr;
   this->grade = 0;
 }
 
-const Student Record::getStudent() const {
+Student* Record::getStudent() const {
   return this->student;
 }
 
-const Discipline Record::getDiscipline() const {
+Discipline* Record::getDiscipline() const {
   return this->discipline;
 }
 
@@ -52,12 +46,25 @@ const double Record::getGrade() const {
   return this->grade;
 }
 
+void Record::setStudent(Student* _student) {
+  this->student = _student;
+}
+
+void Record::setDiscipline(Discipline* _discipline) {
+  this->discipline = _discipline;
+}
+
+void Record::setGrade(double _grade) {
+  this->grade = _grade;
+}
+
 void Record::saveToFile(char* fileName) {
   std::ofstream out (fileName, std::ofstream::app);
 
-  out <<  this->student.getFn() << " " <<
-          this->discipline.getName() << " " <<
-          this->grade << std::endl;
+  out <<  "Record" << " " <<
+          ((this->student != nullptr) ? (this->student->getFn()) : (0)) << " " <<
+          ((this->discipline != nullptr) ? (this->discipline->getName()) : ("<no-discipline>")) << " " <<
+          this->grade << std::endl ;
 
   out.close();
 }

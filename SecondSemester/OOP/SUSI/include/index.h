@@ -5,3 +5,5 @@
 #include "../src/model/obj/imp/discipline.cpp"
 #include "../src/model/obj/imp/program.cpp"
 #include "../src/model/obj/imp/record.cpp"
+
+#include "../src/controller/controller.cpp"

@@ -67,7 +67,8 @@ void Discipline::setYear(unsigned int _year) {
 void Discipline::saveToFile(char* fileName) {
   std::ofstream out (fileName, std::ofstream::app);
 
-  out <<  this->name << " " <<
+  out  << "Discipline" << " " <<
+          this->name << " " <<
           this->required << " " <<
           this->year << std::endl;
 

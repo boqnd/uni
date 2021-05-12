@@ -6,7 +6,7 @@ class Student{
 private:
   String name;
   unsigned int fn;
-  Program program;
+  Program* program;
   unsigned int group;
   unsigned int year;
   Status status;
@@ -22,7 +22,7 @@ public:
 
   const String getName() const;
   const unsigned int getFn() const;
-  const Program getProgram() const;
+  Program* getProgram() const;
   const unsigned int getGroup() const;
   const unsigned int getYear() const;
   const Status getStatus() const;
@@ -30,13 +30,14 @@ public:
 
   void setName(String&);
   void setFn(unsigned int);
-  void setProgram(Program&);
+  void setProgram(Program*);
   void setGroup(unsigned int);
   void setYear(unsigned int);
   void setStatus(Status);
-  
+  void setAverageGrade(double);
+
   void print ();
-  void enroll (unsigned int fn, Program program, unsigned int group);
+  void enroll (unsigned int fn, Program* program, unsigned int group);
   void advance ();
   void change (String option, String value);
   void graduate ();

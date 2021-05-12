@@ -4,8 +4,8 @@
 
 class Record {
 private:
-  Student student;
-  Discipline discipline;
+  Student* student;
+  Discipline* discipline;
   double grade;
 
 public:
@@ -15,9 +15,13 @@ public:
   Record& operator=(const Record&);
   ~Record();
 
-  const Student getStudent() const;
-  const Discipline getDiscipline() const;
+  Student* getStudent() const;
+  Discipline* getDiscipline() const;
   const double getGrade() const;
+
+  void setStudent(Student*);
+  void setDiscipline(Discipline*);
+  void setGrade(double);
 
   void saveToFile(char* fileName);
 };

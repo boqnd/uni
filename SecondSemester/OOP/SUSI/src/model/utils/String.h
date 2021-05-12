@@ -29,6 +29,8 @@ public:
 
   //int length();
   int length() const;
+  int parseInt() const;
+  double parseDouble() const;
 
 
   friend std::ostream& operator<<(std::ostream& out, String&);
@@ -162,6 +164,46 @@ String::~String() {
 int String::length() const{
   return length(this->data);
 }
+
+int String::parseInt() const {
+  int result = 0;
+  for (size_t i = 0; this->data[i] != '\0'; i++)
+  {
+    if (this->data[i] < '0' || this->data[i] > '9')
+    {
+      throw std::invalid_argument( "received non-number value" );
+    }
+    
+    result = result*10 + (this->data[i] - '0');
+  }
+
+  return result;
+  
+}
+
+double String::parseDouble() const {
+  double result = 0;
+  double dn = 1;
+  bool beforeDecimalPoint = true;
+  for (size_t i = 0; this->data[i] != '\0'; i++)
+  {
+    if (this->data[i] == '.' && beforeDecimalPoint) {
+      beforeDecimalPoint = false;
+    }else {
+      if (this->data[i] < '0' || this->data[i] > '9') {
+        throw std::invalid_argument( "received non-number value" );
+      }
+
+      result = result*10 + (this->data[i] - '0');
+      
+      if (!beforeDecimalPoint) {
+        dn*=10;
+      }
+    }
+  }
+  return result/dn;
+}
+
 
 //Out stream
 std::ostream& operator<<(std::ostream& out, String& str) {
