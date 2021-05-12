@@ -39,10 +39,12 @@ int main() {
   // r.saveToFile("data/SUSI.data");
 
   Controller c;
-  c.loadFromFile("data/SUSI.data");
-  std::cout << c.records.getSize() << std::endl;
-  std::cout << c.records[0]->getStudent()->getName() << " " << c.records[0]->getDiscipline()->getName() << " -> " << c.records[0]->getGrade() << std::endl; 
-
+  c.open("data/SUSI.data");
+  c.load();
+  String newName = "BobaD";
+  c.students[0]->setName(newName);
+  //c.close();
+  c.save();
   //std::cout << c.students[0]->getProgram()->getDisciplines().getSize() << std::endl;
   // std::cout << c.disciplines.getSize() << std::endl;
   // std::cout << c.programs.getSize() << std::endl;
