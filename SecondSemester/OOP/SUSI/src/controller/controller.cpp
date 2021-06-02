@@ -12,6 +12,25 @@ public:
   Controller() :fileName(nullptr) {}
   ~Controller() { fileName = nullptr; }
 
+  void calculateAverageGrades() {
+    if (this->fileName != nullptr) {
+      for (size_t i = 0; i < students.getSize(); i++)
+      {
+        double count = 0;
+        double sum = 0;
+        for (size_t r = 0; r < records.getSize(); r++)
+        {
+          if (records[r]->getStudent()->getFn() == students[i]->getFn())
+          {
+            count++;
+            sum += ((records[r]->getGrade() == 0) ? 2 : records[r]->getGrade());
+          }
+        }
+        students[i]->setAverageGrade(sum/count);
+      }
+    }
+  }
+
   void load() {
     if (this->fileName != nullptr) {
       std::ifstream in(this->fileName);
@@ -191,6 +210,8 @@ public:
       }
       
       in.close();
+
+      this->calculateAverageGrades();
     }
   }
 
@@ -654,6 +675,7 @@ public:
                 if (recordIndex > -1)
                 {
                   records[recordIndex]->setGrade(_grade);
+                  this->calculateAverageGrades();
                   std::cout << "Successfully added grade " << _discipline << ": " << _grade << " to student " << students[studentIndex]->getName() << std::endl;
                 }else {
                   std::cout << "Student " << students[studentIndex]->getName() << " is not enrolled in " << _discipline << std::endl;
@@ -678,7 +700,74 @@ public:
     } else if (command == "protocol") {
       std::cout << "----- not implemented -----" << std::endl;
     } else if (command == "report") {
-      std::cout << "----- not implemented -----" << std::endl;
+      try {
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            unsigned int _fn = words[1].parseInt();
+
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            }
+
+            if (studentIndex > -1)
+            {
+              std::cout << std::endl;
+              std::cout << "Student " << _fn << " " << students[studentIndex]->getName() << std::endl;
+              std::cout << "average grade: " << students[studentIndex]->getAverageGrade() << std::endl << std::endl;
+              std::cout << "PASSED EXAMS: "  << std::endl
+                        << "-------------"   << std::endl;
+              for (size_t i = 0; i < records.getSize(); i++)
+              {
+                if (_fn == records[i]->getStudent()->getFn())
+                {
+                  if (records[i]->getGrade() >= 3)
+                  {
+                    std::cout << records[i]->getDiscipline()->getName() << ": " << records[i]->getGrade() << std::endl;
+                  }
+                }
+              }
+              std::cout << std::endl << "NOT-PASSED EXAMS: "  << std::endl
+                                     << "-----------------"   << std::endl;
+              for (size_t i = 0; i < records.getSize(); i++)
+              {
+                if (_fn == records[i]->getStudent()->getFn())
+                {
+                  if (records[i]->getGrade() < 3)
+                  {
+                    std::cout << records[i]->getDiscipline()->getName() << ": ";
+                    if (records[i]->getGrade() == 0)
+                    {
+                      std::cout << "Not taken" << std::endl;
+                    } else {
+                      std::cout << records[i]->getGrade() << std::endl;
+                    }
+                  }
+                }
+              }
+              std::cout << std::endl;
+            } else {
+              std::cout << "No student with fn " << _fn << " was found." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to report" << std::endl;
+          }
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
+    } else if (command == "exit") {
+      std::cout << "  Bye, bye!" << std::endl;
     } else {
       std::cout << "----- not recognised -----" << std::endl;
     }
