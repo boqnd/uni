@@ -555,6 +555,7 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "enrollin") {
+      //todo
       try {
         if (this->fileName != nullptr) {
           if ((words.getSize() > 2)) {
@@ -563,6 +564,7 @@ public:
 
             int studentIndex = -1;
             int disciplineIndex = -1;
+            bool exists = false;
 
             for (size_t i = 0; i < students.getSize(); i++)
             {
@@ -582,19 +584,31 @@ public:
               }
             }
 
-            if(studentIndex > -1) {  
-              if (disciplineIndex > -1)
-              {
-                Record newRec;
-                newRec.setDiscipline(disciplines[disciplineIndex]);
-                newRec.setStudent(students[studentIndex]);
-                records.push_back(new Record(newRec));
-                std::cout << "Successfully enrolled " << students[studentIndex]->getName() << " in " << _discipline << std::endl;
-              }else {
-                std::cout << "No discipline with name " << _discipline << " was found." << std::endl;
+            for (size_t r = 0; r < records.getSize(); r++)
+            {
+              if (_discipline == records[r]->getDiscipline()->getName() && _fn == records[r]->getStudent()->getFn()) {
+                exists = true;
+                break;
+              }
+            }
+            
+            if (!exists) {
+              if(studentIndex > -1) {  
+                if (disciplineIndex > -1)
+                {
+                  Record newRec;
+                  newRec.setDiscipline(disciplines[disciplineIndex]);
+                  newRec.setStudent(students[studentIndex]);
+                  records.push_back(new Record(newRec));
+                  std::cout << "Successfully enrolled " << students[studentIndex]->getName() << " in " << _discipline << std::endl;
+                }else {
+                  std::cout << "No discipline with name " << _discipline << " was found." << std::endl;
+                }
+              } else {
+                std::cout << "No student with fn " << _fn << " was found." << std::endl;
               }
             } else {
-              std::cout << "No student with fn " << _fn << " was found." << std::endl;
+              std::cout << "Student with fn " << _fn << " is already enrolled in discipline " << _discipline << std::endl;
             }
           } else {
             std::cout << "Failed to enroll" << std::endl;
@@ -608,7 +622,59 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "addgrade") {
-      std::cout << "----- not implemented -----" << std::endl;
+      try {
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 3)) {
+            unsigned int _fn = words[1].parseInt();
+            String _discipline = words[2];
+            double _grade = words[3].parseDouble();
+
+            int recordIndex = -1;
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            } 
+
+            for (size_t r = 0; r < records.getSize(); r++)
+            {
+              if (_discipline == records[r]->getDiscipline()->getName() && _fn == records[r]->getStudent()->getFn()) {
+                recordIndex = r;
+                break;
+              }
+            }
+            
+            if (_grade >= 2 && _grade <=6) {
+              if (studentIndex > -1) {
+                if (recordIndex > -1)
+                {
+                  records[recordIndex]->setGrade(_grade);
+                  std::cout << "Successfully added grade " << _discipline << ": " << _grade << " to student " << students[studentIndex]->getName() << std::endl;
+                }else {
+                  std::cout << "Student " << students[studentIndex]->getName() << " is not enrolled in " << _discipline << std::endl;
+                }
+              } else {
+                std::cout << "No student with fn " << _fn << " was found." << std::endl;
+              }
+            } else {
+              std::cout << "Grade should be between 2 and 6" << std::endl;
+            }
+          } else {
+            std::cout << "Failed to add grade" << std::endl;
+          }
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "protocol") {
       std::cout << "----- not implemented -----" << std::endl;
     } else if (command == "report") {
