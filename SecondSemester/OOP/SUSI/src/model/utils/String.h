@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cstring>
-
+#include "Vector.h"
 
 class String {
 
@@ -21,6 +21,7 @@ public:
   String& operator=(const char*);
   bool operator==(const String&);
   bool operator==(const char*);
+  void push_back(const char);
 
   //char operator[](const unsigned int);
   char operator[](const unsigned int) const;
@@ -31,7 +32,8 @@ public:
   int length() const;
   int parseInt() const;
   double parseDouble() const;
-
+  Vector<String> split(char) const;
+  char* getData() const;
 
   friend std::ostream& operator<<(std::ostream& out, String&);
   friend std::ostream& operator<<(std::ostream& out, const String&);
@@ -140,6 +142,13 @@ String& String::operator=(const char* other) {
   return *this;
 }
 
+void String::push_back(const char _newChar) {
+  int size = this->length();
+  this->data[size++] = _newChar;
+  this->data[size] = '\0';
+}
+
+
 //Operator[] returns the `i`-th char of the string, or '\0'
 // char String::operator[](const unsigned int i) {
 //   if(i < this->length()) {
@@ -203,6 +212,30 @@ double String::parseDouble() const {
   }
   return result/dn;
 }
+
+Vector<String> String::split(char separator) const {
+  Vector<String> words;
+
+  size_t i = 0;
+  while (this->data[i] != '\0')
+  {
+    String curr = "";
+
+    for (; this->data[i] != separator && this->data[i] != '\0'; i++)
+    {
+      curr.push_back(this->data[i]);
+    }
+    i++;
+
+    words.push_back(curr);
+  }
+  return words;
+}
+
+char* String::getData() const {
+  return this->data;
+}
+
 
 
 //Out stream

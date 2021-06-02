@@ -39,12 +39,22 @@ int main() {
   // r.saveToFile("data/SUSI.data");
 
   Controller c;
-  c.open("data/SUSI.data");
-  c.load();
-  String newName = "BobaD";
-  c.students[0]->setName(newName);
-  //c.close();
-  c.save();
+  c.start();
+
+  // String str = "asdf";
+  // Vector<String> words = str.split(' ');
+
+  // for (size_t i = 0; i < words.getSize(); i++)
+  // {
+  //   std::cout << words[i] << std::endl;
+  // }
+
+  // c.open("data/SUSI.data");
+  // c.load();
+  // String newName = "BobaD";
+  // c.students[0]->setName(newName);
+  // //c.close();
+  // c.save();
   //std::cout << c.students[0]->getProgram()->getDisciplines().getSize() << std::endl;
   // std::cout << c.disciplines.getSize() << std::endl;
   // std::cout << c.programs.getSize() << std::endl;

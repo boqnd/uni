@@ -18,6 +18,8 @@ public:
 	void pop_back();
 	void pop_front();
 
+	void destroy();
+
 	int getSize() const;
 
 private:
@@ -118,6 +120,15 @@ void Vector<T>::pop_front() {
 	delete[] data;
 	data = temp;
 }
+
+template<typename T>
+void Vector<T>::destroy() {
+	while (this->size > 0)
+	{
+		this->pop_back();
+	}
+}
+
 
 template<typename T>
 int Vector<T>::getSize() const {

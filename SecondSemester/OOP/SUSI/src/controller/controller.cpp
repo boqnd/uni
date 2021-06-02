@@ -194,6 +194,21 @@ public:
     }
   }
 
+  void open(char* _fileName) {
+    if (_fileName != nullptr) {
+      this->fileName = new char[strlen(_fileName)];
+      strcpy(this->fileName, _fileName);
+    }
+  }
+
+  void close() {
+    this->fileName = nullptr;
+    records.destroy();
+    students.destroy();
+    programs.destroy();
+    disciplines.destroy();
+  }
+
   void save() {
     if (this->fileName != nullptr) {
       std::ofstream out (fileName);
@@ -214,21 +229,225 @@ public:
     }
   }
 
-  void open(char* _fileName) {
-    if (_fileName != nullptr) {
-      this->fileName = new char[strlen(_fileName)];
-      strcpy(this->fileName, _fileName);
-    }
-  }
-
-  void close() {
-    this->fileName = nullptr;
-  }
-
   void saveAs(char* _fileName) {
     if (_fileName != nullptr) {
       this->open(_fileName);
       this->save();
     }
+  }
+
+  String readCommand() {
+    char command[1024];
+
+    std::cout << "command -> ";
+    std::cin.getline(command, 1024);
+
+    String result = command;
+
+    return result;
+  }
+
+  void processCommand(String input) {
+    Vector<String> words = input.split(' ');
+    String command = ((words.getSize() > 0) ? (words[0]) : (""));
+
+    if (command == "open") {
+      if ((words.getSize() > 1)) {
+        this->open(words[1].getData());
+        this->load();
+        std::cout << "Successfully opened " << words[1] << std::endl;
+      } else {
+        std::cout << "File failed to open" << std::endl;
+      }
+    } else if (command == "close") {   
+      if ((words.getSize() > 0)) {
+        if (this->fileName == nullptr) {
+          std::cout << "No file is open" << std::endl;
+        } else {
+          std::cout << "Successfully closed " << this->fileName  << std::endl;
+          this->close();
+        }
+      } else {
+        std::cout << "File failed to close" << std::endl;
+      }
+    } else if (command == "save") {
+      if ((words.getSize() > 0)) {
+        if (this->fileName == nullptr) {
+          std::cout << "No file is open" << std::endl;
+        } else {
+          this->save();
+          std::cout << "Successfully saved " << this->fileName  << std::endl;
+        }
+      } else {
+        std::cout << "File failed to save" << std::endl;
+      }
+    } else if (command == "saveas") {
+      if ((words.getSize() > 1)) {
+        this->saveAs(words[1].getData());
+        std::cout << "Successfully saved " << words[1] << std::endl;
+      } else {
+        std::cout << "File failed to save" << std::endl;
+      }
+    } else if (command == "help") {
+      std::cout << "The following commands are supported:" << std::endl;
+      std::cout << "open <file>         opens <file>" << std::endl;
+      std::cout << "close               closes currently opened file" << std::endl;
+      std::cout << "save                saves the currently open file" << std::endl;
+      std::cout << "saveas <file>       saves the currently open file in <file>" << std::endl;
+      std::cout << "help                prints this information" << std::endl;
+      std::cout << "exit                exists the program" << std::endl;
+    } else if (command == "enroll") {
+      try {
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 4)) {
+            unsigned int _fn = words[1].parseInt();
+            String _program = words[2];
+            unsigned int _group = words[3].parseInt();
+            String _name = words[4];
+
+            bool validFn = true;
+            int programIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                std::cout << "Student with fn " << _fn << " is already enrolled." << std::endl;
+                validFn = false;
+                break;
+              }
+            } 
+            
+            for (size_t j = 0; j < programs.getSize(); j++)
+            {
+              if (_program == programs[j]->getName())
+              {
+                programIndex = j;
+              }
+            }
+
+            if(validFn) {  
+              if (programIndex > -1)
+              {
+                Student newStud;
+                newStud.setName(_name);
+                newStud.enroll(_fn, programs[programIndex], _group);
+                students.push_back(new Student(newStud));
+                std::cout << "Successfully enrolled " << _name << std::endl;
+              }else {
+                std::cout << "No program with name " << _program << " was found" << std::endl;
+              }
+            }
+          } else {
+            std::cout << "Failed to enroll" << std::endl;
+          }
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
+    } else if (command == "advance") {
+      try {
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            unsigned int _fn = words[1].parseInt();
+
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            }
+
+            if (studentIndex > -1)
+            {
+              students[studentIndex]->advance();
+              std::cout << "Successfully advanced " << students[studentIndex]->getName() << std::endl;
+            } else {
+              std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to advance" << std::endl;
+          } 
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
+    } else if (command == "change") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "graduate") {
+      //more to do ...
+      try{
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            unsigned int _fn = words[1].parseInt();
+
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            }
+
+            if (studentIndex > -1)
+            {
+              students[studentIndex]->graduate();
+              std::cout << "Successfully graduated " << students[studentIndex]->getName() << std::endl;
+            } else {
+              std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to graduate." << std::endl;
+          } 
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
+    } else if (command == "interupt") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "resume") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "print") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "printall") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "enrollin") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "addgrade") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "protocol") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else if (command == "report") {
+      std::cout << "----- not implemented -----" << std::endl;
+    } else {
+      std::cout << "----- not recognised -----" << std::endl;
+    }
+  }
+
+  void start() {
+    String command;
+    do {
+      command = readCommand();
+      processCommand(command);
+    } while (!(command == "exit"));
   }
 };
