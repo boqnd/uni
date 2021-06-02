@@ -323,6 +323,7 @@ public:
               if (_program == programs[j]->getName())
               {
                 programIndex = j;
+                break;
               }
             }
 
@@ -385,9 +386,10 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "change") {
+      //todo
       std::cout << "----- not implemented -----" << std::endl;
     } else if (command == "graduate") {
-      //more to do ...
+      //todo
       try{
         if (this->fileName != nullptr) {
           if ((words.getSize() > 1)) {
@@ -423,15 +425,188 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "interupt") {
-      std::cout << "----- not implemented -----" << std::endl;
+      //todo
+      try{
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            unsigned int _fn = words[1].parseInt();
+
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            }
+
+            if (studentIndex > -1)
+            {
+              students[studentIndex]->interrupt();
+              std::cout << "Successfully interrupted " << students[studentIndex]->getName() << std::endl;
+            } else {
+              std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to interrupt." << std::endl;
+          } 
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "resume") {
-      std::cout << "----- not implemented -----" << std::endl;
+      try{
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            unsigned int _fn = words[1].parseInt();
+
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            }
+
+            if (studentIndex > -1)
+            {
+              students[studentIndex]->resume();
+              std::cout << "Successfully resumed " << students[studentIndex]->getName() << std::endl;
+            } else {
+              std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to resume." << std::endl;
+          } 
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "print") {
-      std::cout << "----- not implemented -----" << std::endl;
+      try{
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            unsigned int _fn = words[1].parseInt();
+
+            int studentIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            }
+
+            if (studentIndex > -1)
+            {
+              students[studentIndex]->print();
+            } else {
+              std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to print." << std::endl;
+          } 
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "printall") {
-      std::cout << "----- not implemented -----" << std::endl;
+      try{
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 2)) {
+            String _program = words[1];
+            unsigned int _year = words[2].parseInt();
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_program == students[i]->getProgram()->getName() && _year == students[i]->getYear())
+              {
+                students[i]->print();
+              }
+            }
+          } else {
+            std::cout << "Failed to print all." << std::endl;
+          } 
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "enrollin") {
-      std::cout << "----- not implemented -----" << std::endl;
+      try {
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 2)) {
+            unsigned int _fn = words[1].parseInt();
+            String _discipline = words[2];
+
+            int studentIndex = -1;
+            int disciplineIndex = -1;
+
+            for (size_t i = 0; i < students.getSize(); i++)
+            {
+              if (_fn == students[i]->getFn())
+              {
+                studentIndex = i;
+                break;
+              }
+            } 
+            
+            for (size_t j = 0; j < disciplines.getSize(); j++)
+            {
+              if (_discipline == disciplines[j]->getName())
+              {
+                disciplineIndex = j;
+                break;
+              }
+            }
+
+            if(studentIndex > -1) {  
+              if (disciplineIndex > -1)
+              {
+                Record newRec;
+                newRec.setDiscipline(disciplines[disciplineIndex]);
+                newRec.setStudent(students[studentIndex]);
+                records.push_back(new Record(newRec));
+                std::cout << "Successfully enrolled " << students[studentIndex]->getName() << " in " << _discipline << std::endl;
+              }else {
+                std::cout << "No discipline with name " << _discipline << " was found." << std::endl;
+              }
+            } else {
+              std::cout << "No student with fn " << _fn << " was found." << std::endl;
+            }
+          } else {
+            std::cout << "Failed to enroll" << std::endl;
+          }
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "addgrade") {
       std::cout << "----- not implemented -----" << std::endl;
     } else if (command == "protocol") {
