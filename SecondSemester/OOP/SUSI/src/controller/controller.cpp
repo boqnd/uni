@@ -137,7 +137,7 @@ public:
           s.setGroup(_group.parseInt());
           s.setYear(_year.parseInt());
           s.setStatus((Status)_status.parseInt());
-          s.setAverageGrade(_averageGrade.parseInt());
+          s.setAverageGrade(_averageGrade.parseDouble());
 
           bool programFound = false;
           for (size_t p = 0; p < this->programs.getSize(); p++)
@@ -273,12 +273,16 @@ public:
     String command = ((words.getSize() > 0) ? (words[0]) : (""));
 
     if (command == "open") {
-      if ((words.getSize() > 1)) {
-        this->open(words[1].getData());
-        this->load();
-        std::cout << "Successfully opened " << words[1] << std::endl;
+      if (this->fileName == nullptr) {
+        if ((words.getSize() > 1)) {
+          this->open(words[1].getData());
+          this->load();
+          std::cout << "Successfully opened " << words[1] << std::endl;
+        } else {
+          std::cout << "File failed to open" << std::endl;
+        }
       } else {
-        std::cout << "File failed to open" << std::endl;
+        std::cout << "File is already opened. Please close to open another file." << std::endl;
       }
     } else if (command == "close") {   
       if ((words.getSize() > 0)) {
@@ -390,8 +394,17 @@ public:
 
             if (studentIndex > -1)
             {
-              students[studentIndex]->advance();
-              std::cout << "Successfully advanced " << students[studentIndex]->getName() << std::endl;
+              if (students[studentIndex]->getStatus() == Interupted)
+              {
+                std::cout << "Student " << students[studentIndex]->getName() << " is interrupted. Cant't advance." << std::endl;
+              } else if (students[studentIndex]->getStatus() == Gradueted)
+              {
+                std::cout << "Student " << students[studentIndex]->getName() << " is graduated. Cant't advance." << std::endl;
+              } else if (students[studentIndex]->getStatus() == Enrolled)
+              {
+                students[studentIndex]->advance();
+                std::cout << "Successfully advanced " << students[studentIndex]->getName() << std::endl;
+              }
             } else {
               std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
             }
@@ -408,9 +421,16 @@ public:
       } 
     } else if (command == "change") {
       //todo
+                  //       if (students[studentIndex]->getStatus() == Interupted)
+                  // {
+                  //   std::cout << "Student " << students[studentIndex]->getName() << " is interrupted. Cant't enrol." << std::endl;
+                  // } else if (students[studentIndex]->getStatus() == Gradueted)
+                  // {
+                  //   std::cout << "Student " << students[studentIndex]->getName() << " is graduated. Cant't enrol." << std::endl;
+                  // } else if (students[studentIndex]->getStatus() == Enrolled)
+                  // {
       std::cout << "----- not implemented -----" << std::endl;
     } else if (command == "graduate") {
-      //todo
       try{
         if (this->fileName != nullptr) {
           if ((words.getSize() > 1)) {
@@ -429,8 +449,26 @@ public:
 
             if (studentIndex > -1)
             {
-              students[studentIndex]->graduate();
-              std::cout << "Successfully graduated " << students[studentIndex]->getName() << std::endl;
+              bool passedAllExams = true;
+              for (size_t r = 0; r < records.getSize(); r++)
+              {
+                if (records[r]->getStudent()->getFn() == _fn)
+                {
+                  if (records[r]->getGrade() < 3)
+                  {
+                    passedAllExams = false;
+                    break;
+                  }
+                }                
+              }
+
+              if (passedAllExams)
+              {
+                students[studentIndex]->graduate();
+                std::cout << "Successfully graduated " << students[studentIndex]->getName() << std::endl;
+              } else {
+                std::cout << "Student with fn " << _fn << " has not-passed exams. Can't graduate." << std::endl;
+              }         
             } else {
               std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
             }
@@ -445,8 +483,9 @@ public:
 
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
-    } else if (command == "interupt") {
+    } else if (command == "interrupt") {
       //todo
+      //change
       try{
         if (this->fileName != nullptr) {
           if ((words.getSize() > 1)) {
@@ -465,8 +504,17 @@ public:
 
             if (studentIndex > -1)
             {
-              students[studentIndex]->interrupt();
-              std::cout << "Successfully interrupted " << students[studentIndex]->getName() << std::endl;
+              if (students[studentIndex]->getStatus() == Interupted)
+              {
+                std::cout << "Student " << students[studentIndex]->getName() << " is already interrupted." << std::endl;
+              } else if (students[studentIndex]->getStatus() == Gradueted)
+              {
+                std::cout << "Student " << students[studentIndex]->getName() << " is graduated. Cant't interrupt." << std::endl;
+              } else if (students[studentIndex]->getStatus() == Enrolled)
+              {
+                students[studentIndex]->interrupt();
+                std::cout << "Successfully interrupted " << students[studentIndex]->getName() << std::endl;
+              }
             } else {
               std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
             }
@@ -500,8 +548,17 @@ public:
 
             if (studentIndex > -1)
             {
-              students[studentIndex]->resume();
-              std::cout << "Successfully resumed " << students[studentIndex]->getName() << std::endl;
+              if (students[studentIndex]->getStatus() == Interupted)
+              {
+                students[studentIndex]->resume();
+                std::cout << "Successfully resumed " << students[studentIndex]->getName() << std::endl;
+              } else if (students[studentIndex]->getStatus() == Gradueted)
+              {
+                std::cout << "Student " << students[studentIndex]->getName() << " is graduated. Cant't resume." << std::endl;
+              } else if (students[studentIndex]->getStatus() == Enrolled)
+              {
+                std::cout << "Student " << students[studentIndex]->getName() << " is already enrolled. Cant't resume." << std::endl;
+              }
             } else {
               std::cout << "Student with fn " << _fn << " does not exist." << std::endl;
             }
@@ -576,7 +633,6 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "enrollin") {
-      //todo
       try {
         if (this->fileName != nullptr) {
           if ((words.getSize() > 2)) {
@@ -617,11 +673,38 @@ public:
               if(studentIndex > -1) {  
                 if (disciplineIndex > -1)
                 {
-                  Record newRec;
-                  newRec.setDiscipline(disciplines[disciplineIndex]);
-                  newRec.setStudent(students[studentIndex]);
-                  records.push_back(new Record(newRec));
-                  std::cout << "Successfully enrolled " << students[studentIndex]->getName() << " in " << _discipline << std::endl;
+                  if (students[studentIndex]->getStatus() == Interupted)
+                  {
+                    std::cout << "Student " << students[studentIndex]->getName() << " is interrupted. Cant't enrol." << std::endl;
+                  } else if (students[studentIndex]->getStatus() == Gradueted)
+                  {
+                    std::cout << "Student " << students[studentIndex]->getName() << " is graduated. Cant't enrol." << std::endl;
+                  } else if (students[studentIndex]->getStatus() == Enrolled)
+                  {
+                    bool st_dValid = false;
+                    for (size_t st_d = 0; st_d < students[studentIndex]->getProgram()->getDisciplines().getSize(); st_d++)
+                    {
+                      if (students[studentIndex]->getProgram()->getDisciplines()[st_d]->getName() == disciplines[disciplineIndex]->getName()) {
+                        if (disciplines[disciplineIndex]->getYear() == students[studentIndex]->getYear())
+                        {
+                          st_dValid = true;
+                          break;
+                        }
+                      }
+                    }
+
+                    if (st_dValid)
+                    {
+                      Record newRec;
+                      newRec.setDiscipline(disciplines[disciplineIndex]);
+                      newRec.setStudent(students[studentIndex]);
+                      records.push_back(new Record(newRec));
+                      std::cout << "Successfully enrolled " << students[studentIndex]->getName() << " in " << _discipline << std::endl;
+                      this->calculateAverageGrades();
+                    } else {
+                      std::cout << "Not valid discipline for this year of the program." << std::endl;
+                    }
+                  }
                 }else {
                   std::cout << "No discipline with name " << _discipline << " was found." << std::endl;
                 }
@@ -674,9 +757,18 @@ public:
               if (studentIndex > -1) {
                 if (recordIndex > -1)
                 {
-                  records[recordIndex]->setGrade(_grade);
-                  this->calculateAverageGrades();
-                  std::cout << "Successfully added grade " << _discipline << ": " << _grade << " to student " << students[studentIndex]->getName() << std::endl;
+                  if (students[studentIndex]->getStatus() == Interupted)
+                  {
+                    std::cout << "Student " << students[studentIndex]->getName() << " is interrupted. Cant't take exams." << std::endl;
+                  } else if (students[studentIndex]->getStatus() == Gradueted)
+                  {
+                    std::cout << "Student " << students[studentIndex]->getName() << " is graduated. Cant't take exams." << std::endl;
+                  } else if (students[studentIndex]->getStatus() == Enrolled)
+                  {
+                    records[recordIndex]->setGrade(_grade);
+                    this->calculateAverageGrades();
+                    std::cout << "Successfully added grade " << _discipline << ": " << _grade << " to student " << students[studentIndex]->getName() << std::endl;
+                  }
                 }else {
                   std::cout << "Student " << students[studentIndex]->getName() << " is not enrolled in " << _discipline << std::endl;
                 }
@@ -698,6 +790,7 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "protocol") {
+      //todo
       std::cout << "----- not implemented -----" << std::endl;
     } else if (command == "report") {
       try {

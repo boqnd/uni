@@ -264,3 +264,21 @@ std::istream& operator>>(std::istream& in, String& str) {
   return in;
 }
 
+bool operator==(const String& other_, const String& other) {
+  int index = 0;
+  while (other[index] != '\0') { 
+    if (other_[index] != other[index])
+    {
+      return false;
+    }
+    index++;
+  }
+
+  if (other_[index] == '\0')
+  {
+    return true;
+  }else {
+    return false;
+  }
+}
+
