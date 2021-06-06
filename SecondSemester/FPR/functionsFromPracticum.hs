@@ -1,6 +1,27 @@
 main :: IO ()
 main = do
-  print (insert' 7 [1,5,6])
+  print (levelsum bt1 0)
+
+--Week 13
+listOfIndexes :: Int -> [Int] -> [Int]
+listOfIndexes n xs = [ i | (x, i) <- (zip xs [0..]), x == n] 
+
+averageFunction :: [(Double -> Double)] -> (Double -> Double)
+averageFunction fs = (\ x -> (sum (xs x)) / fromIntegral (length (xs x)))
+  where
+    xs x = [f x | f <- fs]
+
+data BTree = Empty | BTree Int BTree BTree
+
+bt1 :: BTree
+bt1 = BTree 5 (BTree 2 Empty (BTree 3 Empty Empty) ) (BTree 6 Empty Empty)
+
+levelsum :: BTree -> Int -> Int
+levelsum t k = sum [ n | (n, level) <- (indexed t 0), level == k]
+  where
+    indexed Empty _ = []
+    indexed (BTree n lt rt) level = (n, level) : ((indexed lt (level+1)) ++ (indexed rt (level+1)))
+
 
 --Week 7
 primesInRange :: Integer -> Integer -> [Integer]
