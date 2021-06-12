@@ -609,8 +609,6 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "interrupt") {
-      //todo
-      //change
       try{
         if (this->fileName != nullptr) {
           if ((words.getSize() > 1)) {
@@ -915,8 +913,70 @@ public:
         std::cout << "exception: " << e.what() << std::endl << std::endl;
       } 
     } else if (command == "protocol") {
-      //todo
-      std::cout << "----- not implemented -----" << std::endl;
+      try {
+        if (this->fileName != nullptr) {
+          if ((words.getSize() > 1)) {
+            String _discipline = words[1];
+            int disciplineIndex = -1;
+            
+            for (size_t j = 0; j < disciplines.getSize(); j++)
+            {
+              if (_discipline == disciplines[j]->getName())
+              {
+                disciplineIndex = j;
+                break;
+              }
+            }
+
+            if (disciplineIndex > -1) {
+              Vector<Student*> _students;
+              for (size_t i = 0; i < records.getSize(); i++)
+              {
+                if (records[i]->getDiscipline()->getName() == disciplines[disciplineIndex]->getName()) {
+                  _students.push_back(records[i]->getStudent());
+                }
+              }
+
+              while (_students.getSize() > 0)
+              {
+                String studProgram = _students[0]->getProgram()->getName();
+                int studYear = _students[0]->getYear();
+                Vector<int> toBeDeleted;
+
+                std::cout << std::endl << "Program: " << studProgram << " Year: " << studYear << std::endl;
+
+                for (size_t s = 0; s < _students.getSize(); s++)
+                {
+                  if (_students[s]->getProgram()->getName() == studProgram && _students[s]->getYear() == studYear)
+                  {
+                    _students[s]->print();
+                    toBeDeleted.push_back(s);
+                  }
+                }
+
+                while (toBeDeleted.getSize() > 0)
+                {
+                  _students.delete_at(toBeDeleted[0]);
+                  toBeDeleted.pop_front();
+                }                
+              }
+              
+            }else {
+              std::cout << "No discipline with name " << _discipline << " was found." << std::endl;
+            }
+
+
+          } else {
+            std::cout << "Failed to print protocol." << std::endl;
+          }
+        } else {
+          std::cout << "No opened file." << std::endl;
+        }
+      } catch(const std::exception& e) {
+        std::cout << std::endl << "|    <error>    |" << std::endl << std::endl;
+
+        std::cout << "exception: " << e.what() << std::endl << std::endl;
+      } 
     } else if (command == "report") {
       try {
         if (this->fileName != nullptr) {

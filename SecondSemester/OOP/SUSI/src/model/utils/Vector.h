@@ -22,6 +22,8 @@ public:
 
 	int getSize() const;
 
+	void delete_at(int index);
+
 private:
 	T* data;
 	int size;
@@ -133,4 +135,21 @@ void Vector<T>::destroy() {
 template<typename T>
 int Vector<T>::getSize() const {
 	return this->size;
+}
+
+template<typename T>
+void Vector<T>::delete_at(int index)
+{
+	T* temp = new T[size - 1];
+	for (size_t i = 0; i < index; i++)
+	{
+		temp[i] = data[i];
+	}
+	size--;
+	for (size_t i = index; i < size ; i++)
+	{
+		temp[i] = data[i + 1];
+	}
+	delete[] data;
+	data = temp;
 }

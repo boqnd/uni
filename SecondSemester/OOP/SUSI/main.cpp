@@ -40,6 +40,15 @@ int main() {
 
   Controller c;
   c.start();
+  // Vector<int> i;
+  // i.push_back(1); 
+  // i.push_back(2); 
+  // i.push_back(3); 
+  // i.push_back(4); 
+  // i.push_back(5); 
+  // i.push_back(6); 
+  // i.delete_at(2);
+  // i.print();
 
   // String str = "asdf";
   // Vector<String> words = str.split(' ');
