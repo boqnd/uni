@@ -944,15 +944,31 @@ public:
                 Vector<int> toBeDeleted;
 
                 std::cout << std::endl << "Program: " << studProgram << " Year: " << studYear << std::endl;
+                Vector<Student*> studsToPrint;
 
                 for (size_t s = 0; s < _students.getSize(); s++)
                 {
                   if (_students[s]->getProgram()->getName() == studProgram && _students[s]->getYear() == studYear)
                   {
-                    _students[s]->print();
+                    //_students[s]->print();
+                    studsToPrint.push_back(_students[s]);
                     toBeDeleted.push_back(s);
                   }
                 }
+
+
+                while(studsToPrint.getSize() > 0) {
+                  int indexToPrint = 0;
+                  for (size_t sp = 0; sp < studsToPrint.getSize(); sp++)
+                  {
+                    if (studsToPrint[sp]->getFn() < studsToPrint[indexToPrint]->getFn()) {
+                      indexToPrint = sp;
+                    }
+                  }
+                  studsToPrint[indexToPrint]->print();
+                  studsToPrint.delete_at(indexToPrint);
+                }
+                
 
                 while (toBeDeleted.getSize() > 0)
                 {
