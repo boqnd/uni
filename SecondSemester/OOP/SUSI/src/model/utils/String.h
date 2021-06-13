@@ -187,7 +187,6 @@ int String::parseInt() const {
   }
 
   return result;
-  
 }
 
 double String::parseDouble() const {

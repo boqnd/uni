@@ -12,7 +12,6 @@ private:
   Status status;
   double averageGrade;
 
-  // void calculateAverageGrade();
 public:
   Student();
   Student(Student&);
