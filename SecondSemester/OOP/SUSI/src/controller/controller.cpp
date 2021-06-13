@@ -325,6 +325,18 @@ public:
       std::cout << "saveas <file>       saves the currently open file in <file>" << std::endl;
       std::cout << "help                prints this information" << std::endl;
       std::cout << "exit                exists the program" << std::endl;
+      std::cout << "enroll                " << std::endl;
+      std::cout << "advance                " << std::endl;
+      std::cout << "change                " << std::endl;
+      std::cout << "graduate                " << std::endl;
+      std::cout << "interrupt                " << std::endl;
+      std::cout << "resume                " << std::endl;
+      std::cout << "print                " << std::endl;
+      std::cout << "printall                " << std::endl;
+      std::cout << "enrollin                " << std::endl;
+      std::cout << "addgrade                " << std::endl;
+      std::cout << "protocol                " << std::endl;
+      std::cout << "report                " << std::endl;
     } else if (command == "enroll") {
       try {
         if (this->fileName != nullptr) {
