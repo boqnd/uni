@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "vector": "cpp",
     "ostream": "cpp",
     "__bit_reference": "cpp",
     "__config": "cpp",
@@ -58,11 +59,6 @@
     "type_traits": "cpp",
     "typeinfo": "cpp",
     "unordered_map": "cpp",
-    "utility": "cpp",
-    "vector": "cpp",
-    "deque": "cpp",
-    "fstream": "cpp",
-    "iomanip": "cpp",
-    "stack": "cpp"
+    "utility": "cpp"
   }
 }
