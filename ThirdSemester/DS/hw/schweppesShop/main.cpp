@@ -309,7 +309,7 @@ class Shop {
 int main() {
   int W = 5;
   int C = 4;
-
+  std::cout << "working" << std::cout;
   Shop shop;
   shop.StartDay();
 
