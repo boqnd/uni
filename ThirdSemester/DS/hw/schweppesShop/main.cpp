@@ -285,6 +285,19 @@ class Shop {
         }
       }
 
+      //memory leaks !!!
+// 1 1
+// 0 10 10 10
+// W 0 banana
+// 0 10 0 0
+
+// или 
+
+// 1 1
+// 0 10 10 10
+// W 0 banana
+// 0 10 0 0
+// D 60 banana
       if(!this->customers_toLeave.empty()) {
         std::cout << this->customers_toLeave.size() << " customers are still whaiting" <<std::endl;
       }
