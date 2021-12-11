@@ -1,6 +1,5 @@
 #include "interface.h"
 #include "queue.cpp"
-// #include <queue>
 #include <vector>
 
 struct Worker {
@@ -55,7 +54,7 @@ struct MyStore : Store {
 		}
 	}
 
-	void advanceTo(int minute) override {
+	void advanceTo(int minute) override {		
 		while(!this->customers.empty() || !this->customers_toLeave.empty()) {
 			Client* current = &this->customers.front().data1;
 			// std::cout << current->arriveMinute << current->banana << current->schweppes << current->maxWaitTime << std::endl;
@@ -212,7 +211,7 @@ struct MyStore : Store {
 		if (this->busyWorkers.empty()) {
 			return false;
 		}
-		return (this->busyWorkers.front().time + 60 <= time);
+		return (this->busyWorkers.front().time + 60 < time);
 	}
 
 	void sendWorkersIfNeeded(Client* current) {

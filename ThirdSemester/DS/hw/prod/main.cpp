@@ -57,9 +57,5 @@ int main() {
   }
 
   store->addClients(customers, nCustomers);
-  store->advanceTo(500);
-
-
-  // ResourceType r = ResourceType::banana;
-  // t.onWorkerSend(1,r);
+  store->advanceTo(INT_MAX);
 }
