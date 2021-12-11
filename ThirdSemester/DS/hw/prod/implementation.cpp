@@ -107,8 +107,8 @@ struct MyStore : Store {
 
 				if (checkIfWorkerWillBeDoneBefore(customerToLeave->arriveMinute + customerToLeave->maxWaitTime)) {
 						// std::cout << "a worker will be done before this customer" << std::endl;
-						std::cout << customerToLeave->arriveMinute << "+" << customerToLeave->maxWaitTime << std::endl;
-						std::cout << customers_toLeave.size()<< std::endl;
+						// std::cout << customerToLeave->arriveMinute << "+" << customerToLeave->maxWaitTime << std::endl;
+						// std::cout << customers_toLeave.size()<< std::endl;
 						//bug to fix
 
 					int _time = this->busyWorkers.front().time + 60;
@@ -189,7 +189,7 @@ struct MyStore : Store {
 					break;
 			}
 			// this->busyWorkers.front()->doneMessage();
-			this->actionHandler->onWorkerBack(this->busyWorkers.back().time+60,this->busyWorkers.back().product);
+			this->actionHandler->onWorkerBack(this->busyWorkers.front().time+60,this->busyWorkers.front().product);
 			this->busyWorkers.pop();
 			this->freeWorkers++;
 		} 
