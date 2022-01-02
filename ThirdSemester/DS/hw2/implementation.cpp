@@ -70,11 +70,19 @@ void Hierarchy::fillData(const string& data) {
 
 
 Hierarchy::Hierarchy (Hierarchy&& r) noexcept {
-  //todo
+  if(r.num_employees() > 0) {
+    this->data.root = new node(r.data.root->value);
+    this->names.push_back("Uspeshnia");
+    this->fillData(r.print());
+  }
 }
 
 Hierarchy::Hierarchy(const Hierarchy& r) {
-  //todo
+  if(r.num_employees() > 0) {
+    this->data.root = new node(r.data.root->value);
+    this->names.push_back("Uspeshnia");
+    this->fillData(r.print());
+  }
 }
 
 Hierarchy::Hierarchy(const string& data) {
@@ -85,11 +93,7 @@ Hierarchy::Hierarchy(const string& data) {
   }
 }
 
-Hierarchy::~Hierarchy() noexcept {
-  //todo
-}
-
-// void Hierarchy::operator=(const Hierarchy&) = delete;
+Hierarchy::~Hierarchy() noexcept {}
 
 string Hierarchy::print()const {
   string result = "";
@@ -326,5 +330,37 @@ void Hierarchy::modernize() {
 }
 
 Hierarchy Hierarchy::join(const Hierarchy& right) const {
-  return Hierarchy("test");
+  Hierarchy h("");
+
+  h.data.root = new node("Uspeshnia");
+  h.names.push_back("Uspeshnia");
+
+  queue<string> s;
+  s.push(this->data.root->value);
+
+  while (!s.empty()) {
+    if (this->data.getChild(s.front())) {
+      for (size_t i = 0; i < this->data.getChild(s.front())->children.size(); i++)
+      {
+        if (!h.data.getChild(this->data.getChild(s.front())->children[i]->value)) {
+          h.hire(this->data.getChild(s.front())->children[i]->value, s.front());
+          s.push(this->data.getChild(s.front())->children[i]->value);
+        }
+      }
+    }
+
+    if (right.data.getChild(s.front())) {
+      for (size_t i = 0; i < right.data.getChild(s.front())->children.size(); i++)
+      {
+        if (!h.data.getChild(right.data.getChild(s.front())->children[i]->value)) {
+          h.hire(right.data.getChild(s.front())->children[i]->value, s.front());
+          s.push(right.data.getChild(s.front())->children[i]->value);
+        }
+      }
+    }
+    
+    s.pop();
+  }
+
+  return h;
 }
