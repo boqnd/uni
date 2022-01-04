@@ -1,6 +1,5 @@
 {
   "files.associations": {
-    "ostream": "cpp",
     "__bit_reference": "cpp",
     "__config": "cpp",
     "__debug": "cpp",
@@ -22,6 +21,7 @@
     "bitset": "cpp",
     "cctype": "cpp",
     "chrono": "cpp",
+    "clocale": "cpp",
     "cmath": "cpp",
     "complex": "cpp",
     "cstdarg": "cpp",
@@ -47,6 +47,7 @@
     "mutex": "cpp",
     "new": "cpp",
     "optional": "cpp",
+    "ostream": "cpp",
     "ratio": "cpp",
     "sstream": "cpp",
     "stdexcept": "cpp",
@@ -59,10 +60,6 @@
     "typeinfo": "cpp",
     "unordered_map": "cpp",
     "utility": "cpp",
-    "vector": "cpp",
-    "deque": "cpp",
-    "fstream": "cpp",
-    "iomanip": "cpp",
-    "stack": "cpp"
+    "vector": "cpp"
   }
 }

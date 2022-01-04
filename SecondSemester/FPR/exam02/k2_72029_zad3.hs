@@ -1,6 +1,8 @@
 main :: IO ()
 main = do 
-  -- print (isPrimeDictionary t3 vocabulary)
+  print (isPrimeDictionary t1 vocabulary)
+  print (isPrimeDictionary t3 vocabulary)
+
 
 type Vocabulary = [String]
 
@@ -18,8 +20,20 @@ t2 = Node 'a' (Node 't' (Node 'l' (Node 't' Nil Nil) (Node 'h' Nil Nil)) (Node '
 t3 :: BTree
 t3 = Node 'a' (Node 't' (Node 'l' Nil Nil) (Node 'i' Nil Nil)) (Node 'h' (Node 's' Nil Nil) (Node 'p' Nil Nil))
 
--- isPrimeDictionary :: BTree -> Vocabulary -> Bool
--- isPrimeDictionary tree voc = [(w, i) | (w,i) <- zip (getLeveledWords tree) [0..]]......
+isPrimeDictionary :: BTree -> Vocabulary -> Bool
+isPrimeDictionary tree voc = isPrime (value tree voc)
+  where
+    value tree [] = 0
+    value tree (v:vs) = (value tree vs) + (sum [length v + i | (w,i) <- zip (getLeveledWords tree) [0..], substring w v])    
+
+    isPrime n
+      | n == 1 = False
+      | otherwise = helper n (n - 1)
+        where 
+          helper n curr 
+            | curr == 1 = True
+            | (n `mod` curr) == 0 = False
+            | otherwise = helper n (curr - 1)
 
 -- todo ..
 -- ne mi stigna vremeto no vsichki pomoshtni funkcii koito mi trqbvat sa napisani. Ostana mi samo da gi sglobya.
@@ -50,8 +64,7 @@ substring [] sub = False
 substring str sub = helper str sub sub
   where
     helper [] _ (c:cu) =  False
-    helper (s:st) sub [] = False
     helper _ sub [] = True
     helper (s:st) sub (c:cu)
-      | not (s == c) = helper st sub (c:cu)
+      | not (s == c) = helper st sub sub
       | otherwise = helper st sub cu
