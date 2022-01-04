@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-#define DOCTEST_CONFIG_IMPLEMENT
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "../tests/doctest.h"
 
 #include "../src/model/obj/imp/student.cpp"
