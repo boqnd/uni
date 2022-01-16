@@ -35,6 +35,8 @@ public:
 	WordsMultiset(size_t capacity);
 	~WordsMultiset();
 
+	void resize();
+
 	const size_t getHashIndex(const string&) const;
 
 	WordCount* find(const string&) const;

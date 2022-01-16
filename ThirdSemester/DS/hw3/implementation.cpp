@@ -22,6 +22,22 @@ WordsMultiset::~WordsMultiset() {
   delete[] this->table;
 }
 
+void WordsMultiset::resize() {
+  WordsMultiset* newSet = new WordsMultiset(this->capacity*2);
+  
+  for (size_t j = 0; j < this->capacity; j++)
+  {
+    for (list<WordCount>::iterator i = table[j].begin(); i != table[j].end(); i++)
+    {
+      newSet->add(i->word);
+    }
+  }
+
+  this->table = newSet->table;
+  this->size = newSet->size;
+  this->capacity = newSet->capacity;
+  this->containers = newSet->containers;
+}
 
 const size_t WordsMultiset::getHashIndex(const string& s) const {
   return (this->hash(s))%(this->capacity);
@@ -61,6 +77,10 @@ void WordsMultiset::add(const std::string& word, size_t times) {
   table[getHashIndex(word)].push_back(WordCount(word, times));
   this->size += times;
   this->containers++;
+
+  if (this->containers > 0.7*capacity) {
+    this->resize();
+  }
 }
 
 bool WordsMultiset::contains(const std::string& word) const {
@@ -73,8 +93,8 @@ size_t WordsMultiset::countOf(const std::string& word) const {
 }
 
 ComparisonReport Comparator::compare(std::istream& a, std::istream& b) {
-  WordsMultiset h1(10);
-  WordsMultiset h2(10);
+  WordsMultiset h1;
+  WordsMultiset h2;
   
   string word;
 

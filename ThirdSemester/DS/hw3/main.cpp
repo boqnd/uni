@@ -13,4 +13,6 @@ int main (int argc, char* argv[]) {
   ComparisonReport h1 = comparator.compare(file, file2);
 
   comparator.printReport(h1);
+
+  WordsMultiset ws;
 }
