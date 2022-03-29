@@ -1,5 +1,9 @@
 {
   "files.associations": {
-    "iostream": "cpp"
-  }
+    "*.ejs": "html",
+    "iostream": "cpp",
+    "exception": "cpp",
+    "new": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
