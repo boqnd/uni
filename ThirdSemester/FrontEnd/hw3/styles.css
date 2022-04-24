@@ -90,7 +90,7 @@ button {
 }
 
 .modal {
-  position: absolute; /* Stay in place */
+  position: fixed; /* Stay in place */
   z-index: 2; /* Sit on top */
   left: 50%;
   top: 50%;
