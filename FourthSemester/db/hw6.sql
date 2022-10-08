@@ -40,3 +40,5 @@ CREATE VIEW AnimalExamination
         SELECT e.description as Examination, a.name as animal
         FROM Examinations e, Animals a
         WHERE e.animal = a.id;
+
+select * from FN72029.ClientAnimals;

@@ -1,0 +1,6 @@
+js: https://intranet.fmi.uni-sofia.bg/index.php/s/ii5AEYZrr2F4WWQ -> 7
+
+kalata: https://intranet.fmi.uni-sofia.bg/index.php/s/3oBb3418L7y4Ejm -> 7
+java: https://intranet.fmi.uni-sofia.bg/index.php/s/pPYC2V0N1yAhoC9 -> 8
+
+fe: https://intranet.fmi.uni-sofia.bg/index.php/s/zYeTMBRtqvEWWuR -> 5

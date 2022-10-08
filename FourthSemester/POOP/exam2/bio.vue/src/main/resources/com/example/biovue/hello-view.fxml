@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="com.example.biovue.HelloController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                        <MenuItem fx:id="MIShuffle" mnemonicParsing="false" onAction="#MIShuffleOnAction" text="Shuffle samples" />
+                    <MenuItem fx:id="MISort" mnemonicParsing="false" onAction="#MISortOnAction" text="Sort by age" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Statistics">
+                  <items>
+                    <MenuItem fx:id="MIDistribution" mnemonicParsing="false" onAction="#MIDistributionOnAction" text="Distribution by Regions" />
+                        <MenuItem fx:id="MIShow" mnemonicParsing="false" onAction="#MIShowOnAction" text="Show endangered by Animal type" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Application">
+                  <items>
+                    <MenuItem fx:id="MIQuit" mnemonicParsing="false" onAction="#MIQuitOnAction" text="Quit" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TextArea fx:id="txaOutput" prefHeight="99.0" prefWidth="600.0" />
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</GridPane>
