@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><vet_clinic>
+    <animal>
+        <name>Bau</name>
+        <type>Dog</type>
+        <breed>Street</breed>
+        <age>2</age>
+    </animal>
+    <animal>
+        <name>BauBau</name>
+        <type>Dog</type>
+        <breed>Husky</breed>
+        <age>10</age>
+    </animal>
+</vet_clinic>

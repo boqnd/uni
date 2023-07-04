@@ -1,0 +1,61 @@
+>> generation: 0 - fitness: 24 - current state:
+4,2,7,3,6,8,8,3
+
+>> generation: 1 - fitness: 24 - current state:
+2,5,3,6,7,3,8,6
+
+>> generation: 2 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 3 - fitness: 26 - current state:
+4,2,7,3,7,3,8,6
+
+>> generation: 4 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 5 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 6 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 7 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 8 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 9 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 10 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 11 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 12 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 13 - fitness: 26 - current state:
+4,2,7,3,6,8,4,1
+
+>> generation: 14 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 15 - fitness: 26 - current state:
+4,2,7,3,6,8,3,1
+
+>> generation: 16 - fitness: 26 - current state:
+4,2,7,3,6,8,6,1
+
+>> generation: 17 - fitness: 27 - current state:
+4,2,7,3,6,8,1,1
+
+>> generation: 18 - fitness: 26 - current state:
+4,2,7,3,6,8,6,1
+
+
+
+SOLUTION:
+4,2,7,3,6,8,5,1

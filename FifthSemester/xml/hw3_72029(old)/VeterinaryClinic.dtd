@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT vet_clinic (clinic*, client*, animal*, examination*)>
+  <!ELEMENT client (full_name, address, phone)>
+    <!ELEMENT full_name (#PCDATA)>
+    <!ELEMENT address (#PCDATA)>
+    <!ELEMENT phone (#PCDATA)>
+  <!ELEMENT animal (name, type, breed, age)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT type (#PCDATA)>
+    <!ELEMENT breed (#PCDATA)>
+    <!ELEMENT age (#PCDATA)>
+  <!ELEMENT examination (description, price)>
+    <!ELEMENT description (#PCDATA)>
+    <!ELEMENT price (#PCDATA)>
+  <!ELEMENT clinic (clinic_name, clinic_location)>
+    <!ELEMENT clinic_name (#PCDATA)>
+    <!ELEMENT clinic_location (#PCDATA)>
+
+<!ATTLIST client id ID #REQUIRED>
+<!ATTLIST animal id ID #REQUIRED>
+<!ATTLIST animal client_id IDREF #REQUIRED>
+<!ATTLIST examination id ID #REQUIRED>
+<!ATTLIST examination animal_id IDREF #REQUIRED>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vet_clinic SYSTEM "VeterinaryClinic.dtd">
+
+<vet_clinic>
+  <client id="c3">
+    <full_name>Kaloyan</full_name>
+    <address>Pernik</address>
+    <phone>0888834567</phone>
+  </client>
+  <animal id="a3" client_id="c3">
+    <name>Sharo</name>
+    <type>Dog</type>
+    <breed>Street</breed>
+    <age>5</age>
+  </animal>
+  <examination id="e3" animal_id="a3">
+    <description>Grooming</description>
+    <price>60</price>
+  </examination>
+</vet_clinic>

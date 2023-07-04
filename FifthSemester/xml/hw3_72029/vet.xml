@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vet_clinic SYSTEM "VeterinaryClinic.dtd">
+
+<vet_clinic>
+  <clinic>
+    <clinic_name>FMI_CLINIC</clinic_name>
+    <clinic_location>JAMES BAUCHER</clinic_location>
+  </clinic>
+  <client id="c1">
+    <full_name>Boyan</full_name>
+    <address>Sofia</address>
+    <phone>0881234567</phone>
+  </client>
+  <client id="c2">
+    <full_name>Nasko</full_name>
+    <address>Haskovo</address>
+    <phone>0888123456</phone>
+  </client>
+  <animal id="a1" client_id="c1">
+    <name>Bau</name>
+    <type>Dog</type>
+    <breed>Street</breed>
+    <age>2</age>
+  </animal>
+  <animal id="a2" client_id="c2">
+    <name>BauBau</name>
+    <type>Dog</type>
+    <breed>Husky</breed>
+    <age>10</age>
+  </animal>
+  <examination id="e1" animal_id="a2">
+    <description>Grooming</description>
+    <price>90</price>
+  </examination>
+  <examination id="e2" animal_id="a1">
+    <description>Grooming</description>
+    <price>60</price>
+  </examination>
+</vet_clinic>

@@ -144,7 +144,11 @@ document.addEventListener("click", event => {
       }
     }
   } else if (element.classList.contains('clear')) {
-    console.log(localStorage)
     localStorage.clear();
+  } else if (element.classList.contains('max')) {
+    console.log('max')
+    const test = document.getElementsByClassName("wrapper")[0];
+    test.classList.add("max_size");
+    console.log(test.style);
   }
 })

@@ -1,0 +1,12 @@
+Vsiako predpolozhenie otnosno zakona na razpredelenie ili
+parametrite na razpredelenieto na sluchajnata velichina H se
+naricha statisticheska hipoteza.
+Statisticheskite hipotezi se razdeliat na:
+Prosti - ako ednoznachno opredeliat razpredelenieto na
+velichinata H. V protiven sluchaj hipotezite se narichat slozhni
+Greshkite, koito mozhe da napravim sa:
+- da othvurlim pravilna hipoteza H0 - greshka ot purvi rod.
+Veroiatnostta da se dopusne greshka ot purvi rod se naricha nivo na
+znachimost i se oznachava s (alfa) ;
+- da priemem nepravilna hipoteza H0 - greshka ot vtori rod.
+Veroiatnostta da se dopusne greshka ot vtori rod se oznachava s (beta)

@@ -1,0 +1,47 @@
+﻿kachestveni, ako stojnostta im ne mozhe da se predstavi kato chislo.
+kolichestveni, ako stojnostta im ima smisul na chislo (izmervane ili
+broene).
+Kolichestvenite promenlivi (priznaci) se deliat na dve grupi:
+Diskretni, ako mnozhestvoto ot vsichki vuzmozhni stojnosti e
+diskretno.
+Neprekusnati, ako mnozhestvoto ot vsichki vuzmozhni stojnosti se
+sustoi ot interval
+Izvadka narichame chastta ot generalnata suvkupnost, koiato se
+izsledva. Broiat na elementite v izvadkata se naricha obem na
+izvadkata.
+Variacionen red - nabliudavanite stojnosti, naredeni po
+golemina:xˆ1 ≤ xˆ2 ≤…≤ xˆn.
+Razmah: Xmax - Xmin
+sreda na izvadkata: (Xmax+Xmin)/2
+Poligon na chestotite: nachupena liniia, suediniavashta tochkite s
+koordinati (xi,mi) ili poligon na otnositelnite chestoti: -
+nachupena liniia, suediniavashta tochkite s koordinati (xi,ν i)
+Histograma na chestotite: figura, sustoiashta se ot pravougulnici, s
+osnova [xi−1,xi ) i lice, ravno na chestotata mi , t.e. s visochina: Hi= Mi/Xi-X(i-1)
+Histograma na otnositelnite chestoti: figura, sustoiashta se ot
+pravougulnici, s osnova[Xi-1,xi) − i lice, ravno na vi
+chisleni harakteristiki – merki (chisla), koito davat dopulnitelna
+informaciia za izvadkata.
+CHislenite harakteristiki na izvadkata se razdeliat na:
+• harakteristiki na mestopolozhenieto;
+• harakteristiki na razsejvaneto.
+Moda - nabliudavanata stojnost Mo s naj-goliama chestota
+Ako izvadkata e zadadena s intervalno razpredelenie, to
+intervalut s naj-goliama chestota se naricha modalen interval
+Mediana – takova chislo Q2 , za koeto polovinata ot
+variantite sa po-malki, a drugata polovina – po golemi ot nego.
+(drugo oznachenie Me ).
+Kvantil ot red r ( 0< p<1) – chislo xp , za koeto 100p% ot
+variantite sa po-malki ot nego.
+Dolen kvartil - Q1 = x0.25 . goren kvartil - Q3 = x0,75
+procentil xP% ot red P% ( 0<P<100 ) – chislo, suvpadashto s kvantil
+ot red p=P/100 .
+Kvartilite Q1 , Q2 , Q3 , naj-malkata xmin = xˆ1 i naj-goliamata
+xmax = xˆn nabliudavana stojnost se izpolzvat za da se dade edno prosto
+i nagledno predstaviane na dannite – taka narechenata
+diagrama ot tip “kutiia” (box-plot)
+Kato netipichni se priemat variantite, koito sa:
+po-malki ot chisloto l1 =Q1 −1,5(Q3 −Q1)
+po-golemi ot chisloto l2 =Q3 +1,5(Q3 −Q1)
+Sredno aritmetichno na izvadkata narichame sredno
+aritmetichnoto na vsichki polucheni nabliudeniia - sredna na izvadkata (izvadkova sredna)

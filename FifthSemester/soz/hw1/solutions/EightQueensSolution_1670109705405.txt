@@ -1,0 +1,1252 @@
+>> generation: 0 - fitness: 25 - current state:
+4,4,1,3,5,7,8,6
+
+>> generation: 1 - fitness: 26 - current state:
+4,4,1,3,5,7,2,6
+
+>> generation: 2 - fitness: 26 - current state:
+4,4,1,3,5,7,2,6
+
+>> generation: 3 - fitness: 26 - current state:
+4,4,1,3,5,7,2,8
+
+>> generation: 4 - fitness: 26 - current state:
+4,6,1,3,5,7,2,6
+
+>> generation: 5 - fitness: 27 - current state:
+4,6,1,3,5,7,2,8
+
+>> generation: 6 - fitness: 27 - current state:
+4,6,1,3,5,7,2,8
+
+>> generation: 7 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 8 - fitness: 27 - current state:
+4,6,1,3,5,7,2,8
+
+>> generation: 9 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 10 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 11 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 12 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 13 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 14 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 15 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 16 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 17 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 18 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 19 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 20 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 21 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 22 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 23 - fitness: 27 - current state:
+4,6,8,3,1,7,2,6
+
+>> generation: 24 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 25 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 26 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 27 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 28 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 29 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 30 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 31 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 32 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 33 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 34 - fitness: 27 - current state:
+7,4,8,3,5,7,2,6
+
+>> generation: 35 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 36 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 37 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 38 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 39 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 40 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 41 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 42 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 43 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 44 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 45 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 46 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 47 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 48 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 49 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 50 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 51 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 52 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 53 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 54 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 55 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 56 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 57 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 58 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 59 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 60 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 61 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 62 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 63 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 64 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 65 - fitness: 27 - current state:
+2,4,8,3,5,7,1,6
+
+>> generation: 66 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 67 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 68 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 69 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 70 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 71 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 72 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 73 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 74 - fitness: 27 - current state:
+8,4,8,3,5,7,1,6
+
+>> generation: 75 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 76 - fitness: 27 - current state:
+8,4,8,3,5,7,1,6
+
+>> generation: 77 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 78 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 79 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 80 - fitness: 27 - current state:
+8,4,8,3,5,7,1,6
+
+>> generation: 81 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 82 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 83 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 84 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 85 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 86 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 87 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 88 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 89 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 90 - fitness: 27 - current state:
+4,2,8,3,5,7,1,6
+
+>> generation: 91 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 92 - fitness: 27 - current state:
+4,2,8,3,5,7,1,6
+
+>> generation: 93 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 94 - fitness: 27 - current state:
+2,4,8,3,5,7,1,6
+
+>> generation: 95 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 96 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 97 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 98 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 99 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 100 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 101 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 102 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 103 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 104 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 105 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 106 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 107 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 108 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 109 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 110 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 111 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 112 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 113 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 114 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 115 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 116 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 117 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 118 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 119 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 120 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 121 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 122 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 123 - fitness: 27 - current state:
+4,4,8,3,5,7,1,6
+
+>> generation: 124 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 125 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 126 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 127 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 128 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 129 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 130 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 131 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 132 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 133 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 134 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 135 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 136 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 137 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 138 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 139 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 140 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 141 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 142 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 143 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 144 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 145 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 146 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 147 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 148 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 149 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 150 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 151 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 152 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 153 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 154 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 155 - fitness: 27 - current state:
+4,4,8,3,5,7,2,6
+
+>> generation: 156 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 157 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 158 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 159 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 160 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 161 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 162 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 163 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 164 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 165 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 166 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 167 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 168 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 169 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 170 - fitness: 27 - current state:
+4,1,8,3,5,7,2,6
+
+>> generation: 171 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 172 - fitness: 27 - current state:
+4,1,8,3,5,7,2,6
+
+>> generation: 173 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 174 - fitness: 27 - current state:
+4,1,8,3,5,7,2,6
+
+>> generation: 175 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 176 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 177 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 178 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 179 - fitness: 27 - current state:
+4,1,8,3,5,7,2,6
+
+>> generation: 180 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 181 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 182 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 183 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 184 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 185 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 186 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 187 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 188 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 189 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 190 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 191 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 192 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 193 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 194 - fitness: 27 - current state:
+4,6,8,3,5,7,2,6
+
+>> generation: 195 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 196 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 197 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 198 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 199 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 200 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 201 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 202 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 203 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 204 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 205 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 206 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 207 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 208 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 209 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 210 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 211 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 212 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 213 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 214 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 215 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 216 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 217 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 218 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 219 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 220 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 221 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 222 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 223 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 224 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 225 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 226 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 227 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 228 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 229 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 230 - fitness: 27 - current state:
+4,6,8,3,5,7,2,1
+
+>> generation: 231 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 232 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 233 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 234 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 235 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 236 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 237 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 238 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 239 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 240 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 241 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 242 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 243 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 244 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 245 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 246 - fitness: 27 - current state:
+3,6,8,3,5,7,2,4
+
+>> generation: 247 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 248 - fitness: 27 - current state:
+4,6,8,3,5,7,2,4
+
+>> generation: 249 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 250 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 251 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 252 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 253 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 254 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 255 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 256 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 257 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 258 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 259 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 260 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 261 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 262 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 263 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 264 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 265 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 266 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 267 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 268 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 269 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 270 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 271 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 272 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 273 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 274 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 275 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 276 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 277 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 278 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 279 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 280 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 281 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 282 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 283 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 284 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 285 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 286 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 287 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 288 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 289 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 290 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 291 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 292 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 293 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 294 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 295 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 296 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 297 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 298 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 299 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 300 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 301 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 302 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 303 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 304 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 305 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 306 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 307 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 308 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 309 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 310 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 311 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 312 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 313 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 314 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 315 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 316 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 317 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 318 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 319 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 320 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 321 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 322 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 323 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 324 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 325 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 326 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 327 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 328 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 329 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 330 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 331 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 332 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 333 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 334 - fitness: 27 - current state:
+8,6,1,3,5,7,2,4
+
+>> generation: 335 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 336 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 337 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 338 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 339 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 340 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 341 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 342 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 343 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 344 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 345 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 346 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 347 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 348 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 349 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 350 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 351 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 352 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 353 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 354 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 355 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 356 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 357 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 358 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 359 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 360 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 361 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 362 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 363 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 364 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 365 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 366 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 367 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 368 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 369 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 370 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 371 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 372 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 373 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 374 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 375 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 376 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 377 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 378 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 379 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 380 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 381 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 382 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 383 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 384 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 385 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 386 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 387 - fitness: 27 - current state:
+3,6,8,3,5,7,2,4
+
+>> generation: 388 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 389 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 390 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 391 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 392 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 393 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 394 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 395 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 396 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 397 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 398 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 399 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 400 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 401 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 402 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 403 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 404 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 405 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 406 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 407 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 408 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 409 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 410 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 411 - fitness: 27 - current state:
+3,6,8,3,5,7,2,4
+
+>> generation: 412 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 413 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 414 - fitness: 27 - current state:
+1,6,8,3,5,7,2,4
+
+>> generation: 415 - fitness: 27 - current state:
+3,6,8,3,5,7,2,4
+
+
+
+SOLUTION:
+3,6,8,1,5,7,2,4

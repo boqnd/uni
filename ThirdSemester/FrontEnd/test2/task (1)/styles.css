@@ -43,6 +43,11 @@
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
+.max_size {
+  width: 400px;
+  height: 600px;
+}
+
 .action-menu {
   list-style: none;
   width: 100%;

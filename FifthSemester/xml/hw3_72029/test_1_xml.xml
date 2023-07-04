@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><vet_clinic>
+    <client>
+        <name>Boyan</name>
+        <address>Sofia</address>
+        <phone>0881234567</phone>
+    </client>
+    <client>
+        <name>Nasko</name>
+        <address>Haskovo</address>
+        <phone>0888123456</phone>
+    </client>
+</vet_clinic>

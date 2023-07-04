@@ -1,0 +1,75 @@
+<game_llibrary>
+    <game>
+
+        <id>
+            1
+        </id>>
+
+        <game_header>
+            <game_name>
+                League of Legends
+            </game_name>
+            <price>
+                none
+            </price>
+            <manufacturer>
+                <name>
+                    Riot games
+                </name>
+                <location>
+                    USA
+                </location>
+                <salary>
+                    1000000
+                </salary>
+            </manufacturer>
+        </game_header>
+
+        <game_details> 
+            <summary>
+                Moba game
+            </summary>
+            <publish_date>
+                27.10.2009
+            </publish_date>
+            <age_restriction>
+                13+
+            </age_restriction>
+            <operational_system>
+                Windows, Mac, Linux
+            </operational_system>
+            <rating>
+                8/10
+            </rating>
+            <genre>
+                MOBA, Action role-playing game
+            </genre>
+            <language>
+                English, Turkish, Portugese, French, German, Polish, Japanese
+            </language>
+            <publisher>
+                Riot Games
+            </publisher>
+            <authors>
+                <author_name>
+                    Tom Cadwell
+                </author_name>
+                <biography>
+                    none
+                </biography>
+                <published_games>
+                    League of Legends
+                </published_games>
+                <nationality>
+                    United States
+                </nationality>
+                <birth_day>
+                    03.07.1981
+                </birth_day>
+                <death_day>
+                    none
+                </death_day>
+            </authors>
+        </game_details>       
+    </game>    
+</game_llibrary>    
