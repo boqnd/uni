@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 
 import { createUser, createUserRoute } from './requests/auth/createUser.js';
 import { getUsers, getUsersRoute } from './requests/auth/getUsers.js';
@@ -7,8 +8,9 @@ import { updateUser, updateUserRoute } from './requests/auth/updateUser.js';
 import { login, loginRoute } from './requests/auth/login.js';
 
 const app = express();
-const port = 3000;
+const port = 4000;
 
+app.use(cors());
 app.use(express.json());
 
 app.post(createUserRoute, createUser);
