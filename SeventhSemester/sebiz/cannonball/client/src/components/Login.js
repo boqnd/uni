@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../services/authService';
 
-const Login = () => {
+const Login = ({login}) => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -25,10 +25,12 @@ const Login = () => {
 
     try {
       const user = await authService.login(formData);
-      if (user) navigate('/'); // Update the path based on your home page route
+      if (user) {
+        login();
+        navigate('/')
+      };
     } catch (error) {
       setLoginFail(true);
-      // console.error('Login failed:', error.message);
     }
   };
 
