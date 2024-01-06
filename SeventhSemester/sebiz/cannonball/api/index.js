@@ -6,6 +6,9 @@ import { getUsers, getUsersRoute } from './requests/auth/getUsers.js';
 import { getUser, getUserRoute } from './requests/auth/getUser.js';
 import { updateUser, updateUserRoute } from './requests/auth/updateUser.js';
 import { login, loginRoute } from './requests/auth/login.js';
+import { getTrips, getTripsRoute } from './requests/trips/getTrips.js';
+import { getTrip, getTripRoute } from './requests/trips/getTrip.js';
+import { createTrip, createTripRoute } from './requests/trips/createTrip.js';
 
 const app = express();
 const port = 4000;
@@ -18,6 +21,11 @@ app.post(getUsersRoute, getUsers);
 app.post(getUserRoute, getUser);
 app.post(updateUserRoute, updateUser);
 app.post(loginRoute, login);
+
+app.post(getTripsRoute, getTrips);
+app.post(getTripRoute, getTrip);
+app.post(createTripRoute, createTrip);
+
 
 
 app.listen(port, () => {

@@ -19,7 +19,7 @@ export class Client {
       const db = await this.client.db("cannonball");
 
       await db.command({ ping: 1 });
-      console.log("Pinged your deployment. You successfully connected to MongoDB!");
+      // console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
       return db;
     } catch (e) {

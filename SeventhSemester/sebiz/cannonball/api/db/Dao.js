@@ -22,7 +22,7 @@ export class DAO {
       const oid = new ObjectId(id);
       return await this.collection.findOne(oid);
     } catch {
-      console.dir("Invalid id")
+      console.dir('Invalid id');
     }
   }
 
