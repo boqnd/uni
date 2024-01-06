@@ -1,7 +1,5 @@
-// components/Header.js
-
 import React from 'react';
-import { FaPlus, FaShoppingCart, FaSearch, FaSignOutAlt } from 'react-icons/fa'; // Import icons from react-icons library
+import { FaPlus, FaShoppingCart, FaSearch, FaSignOutAlt, FaUser, FaRss } from 'react-icons/fa';
 
 const Header = () => {
   return (
@@ -25,6 +23,14 @@ const Header = () => {
           Search Bar
         </div>
         <div style={styles.option}>
+          <FaUser style={styles.icon} />
+          Profile
+        </div>
+        <div style={styles.option}>
+          <FaRss style={styles.icon} />
+          Feed
+        </div>
+        <div style={styles.option}>
           <FaSignOutAlt style={styles.icon} />
           Logout
         </div>
@@ -41,19 +47,22 @@ const styles = {
     padding: '10px',
     backgroundColor: '#333',
     color: 'white',
+    flexDirection: 'row', // Set to 'row' for horizontal layout
   },
   logo: {
-    fontSize: '20px',
+    fontSize: '24px',
     fontWeight: 'bold',
   },
   options: {
     display: 'flex',
-    gap: '20px',
+    flexDirection: 'row', // Set to 'row' for horizontal layout
+    alignItems: 'center',
   },
   option: {
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
+    marginRight: '20px',
   },
   icon: {
     marginRight: '5px',

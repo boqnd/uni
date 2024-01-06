@@ -10,9 +10,9 @@ const App = () => {
     setLoggedIn(true);
   }
 
-  const logout = () => {
-    setLoggedIn(false);
-  }
+  // const logout = () => {
+  //   setLoggedIn(false);
+  // }
 
   console.log(isLoggedIn)
   return (
