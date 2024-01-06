@@ -9,6 +9,10 @@ import { login, loginRoute } from './requests/auth/login.js';
 import { getTrips, getTripsRoute } from './requests/trips/getTrips.js';
 import { getTrip, getTripRoute } from './requests/trips/getTrip.js';
 import { createTrip, createTripRoute } from './requests/trips/createTrip.js';
+import { getPosts, getPostsRoute } from './requests/posts/getPosts.js';
+import { getPost, getPostRoute } from './requests/posts/getPost.js';
+import { createPost, createPostRoute } from './requests/posts/createPost.js';
+
 
 const app = express();
 const port = 4000;
@@ -26,6 +30,9 @@ app.post(getTripsRoute, getTrips);
 app.post(getTripRoute, getTrip);
 app.post(createTripRoute, createTrip);
 
+app.post(getPostsRoute, getPosts);
+app.post(getPostRoute, getPost);
+app.post(createPostRoute, createPost);
 
 
 app.listen(port, () => {

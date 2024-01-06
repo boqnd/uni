@@ -4,6 +4,6 @@ export let getUserRoute = '/auth/getUser/:id';
 
 export async function getUser (req, res) {
   const id = req.params['id'];
-  const users = await usersDao?.getOne(id);
-  res.send(users);
+  const user = await usersDao?.getOne(id);
+  res.send(user);
 };
