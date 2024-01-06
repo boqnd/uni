@@ -14,7 +14,7 @@ const App = () => {
   //   setLoggedIn(false);
   // }
 
-  console.log(isLoggedIn)
+  // console.log(isLoggedIn)
   return (
     <Router>
       <Routes>

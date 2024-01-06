@@ -5,7 +5,7 @@ import tripsDao from "../../db/daos/tripsDao.js";
 export let createPostRoute = '/posts/createPost';
 
 export async function createPost (req, res) {
-  const {userId, startLocation, endLocation, tripTime, comment} = req.body;
+  const {userId, startLocation, endLocation, tripTime, comment, approved} = req.body;
 
   if (!userId || !startLocation || !endLocation || !tripTime || !comment) res.status(400).send('Invalid params');
   else {
@@ -29,7 +29,7 @@ export async function createPost (req, res) {
       const tripId = trip._id;
       const timeCreated = Date.now();
 
-      const post = await postsDao?.insert({userId, tripId, timeCreated, tripTime, comment});
+      const post = await postsDao?.insert({userId, tripId, timeCreated, tripTime, comment, approved: !!approved});
       res.send(post);
     }
   }
