@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaPlus, FaShoppingCart, FaSearch, FaSignOutAlt, FaUser, FaRss } from 'react-icons/fa';
 
 const Header = () => {
@@ -6,10 +7,10 @@ const Header = () => {
     <div style={styles.header}>
       <div style={styles.logo}>Cannonball Bulgaria</div>
       <div style={styles.options}>
-        <div style={styles.option}>
+        <Link to="/new-post" style={styles.option}>
           <FaPlus style={styles.icon} />
           New Post
-        </div>
+        </Link>
         <div style={styles.option}>
           <FaShoppingCart style={styles.icon} />
           Shop
@@ -26,10 +27,10 @@ const Header = () => {
           <FaUser style={styles.icon} />
           Profile
         </div>
-        <div style={styles.option}>
+        <Link to="/" style={styles.option}>
           <FaRss style={styles.icon} />
           Feed
-        </div>
+        </Link>
         <div style={styles.option}>
           <FaSignOutAlt style={styles.icon} />
           Logout
@@ -63,9 +64,12 @@ const styles = {
     alignItems: 'center',
     cursor: 'pointer',
     marginRight: '20px',
+    color: 'white',
+    textDecoration: 'none', // Remove underline
   },
   icon: {
     marginRight: '5px',
+    color: 'white'
   },
 };
 
