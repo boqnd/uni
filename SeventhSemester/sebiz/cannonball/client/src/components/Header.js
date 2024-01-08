@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlus, FaShoppingCart, FaSearch, FaSignOutAlt, FaUser, FaRss } from 'react-icons/fa';
 
-const Header = () => {
+const Header = ({user}) => {
   return (
     <div style={styles.header}>
       <div style={styles.logo}>Cannonball Bulgaria</div>
+      {user && <div>{user.username}</div>}
       <div style={styles.options}>
         <Link to="/new-post" style={styles.option}>
           <FaPlus style={styles.icon} />

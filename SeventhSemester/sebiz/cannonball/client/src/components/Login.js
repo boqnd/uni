@@ -25,8 +25,8 @@ const Login = ({login}) => {
 
     try {
       const user = await authService.login(formData);
-      if (user) {
-        login();
+      if (user.length) {
+        login(user[0]);
         navigate('/')
       };
     } catch (error) {
