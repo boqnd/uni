@@ -12,17 +12,17 @@ const Header = ({user, logout}) => {
           <FaPlus style={styles.icon} />
           New Post
         </Link>
-        <div style={styles.option}>
+        <Link to="/shop" style={styles.option}>
           <FaShoppingCart style={styles.icon} />
           Shop
-        </div>
-        <div style={styles.option}>
+        </Link>
+        <Link to="/cart" style={styles.option}>
           <FaShoppingCart style={styles.icon} />
           Cart
-        </div>
+        </Link>
         <div style={styles.option}>
           <FaSearch style={styles.icon} />
-          Search Bar
+          Search
         </div>
         <div style={styles.option}>
           <FaUser style={styles.icon} />
