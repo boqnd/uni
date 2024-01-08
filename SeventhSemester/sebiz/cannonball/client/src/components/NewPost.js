@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header'; // Import the Header component
 import { useNavigate } from 'react-router-dom';
 
-const NewPost = ({user}) => {
+const NewPost = ({user, logout}) => {
   const navigate = useNavigate();
   useEffect(() => {
     if (!user) navigate('/login');
@@ -10,7 +10,7 @@ const NewPost = ({user}) => {
 
 
   const [postData, setPostData] = useState({
-    userId: user._id,
+    userId: user?._id,
     startLocation: '',
     endLocation: '',
     tripTime: '',
@@ -56,7 +56,7 @@ const NewPost = ({user}) => {
 
   return (
     <div>
-      <Header user={user}/>
+      <Header user={user} logout={logout} />
       <div style={styles.container}>
         <h2 style={styles.heading}>Create a New Post</h2>
         <div style={styles.postCard}>

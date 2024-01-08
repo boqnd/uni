@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlus, FaShoppingCart, FaSearch, FaSignOutAlt, FaUser, FaRss } from 'react-icons/fa';
 
-const Header = ({user}) => {
+const Header = ({user, logout}) => {
   return (
     <div style={styles.header}>
       <div style={styles.logo}>Cannonball Bulgaria</div>
@@ -32,7 +32,7 @@ const Header = ({user}) => {
           <FaRss style={styles.icon} />
           Feed
         </Link>
-        <div style={styles.option}>
+        <div style={styles.option} onClick={logout}>
           <FaSignOutAlt style={styles.icon} />
           Logout
         </div>

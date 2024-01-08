@@ -11,16 +11,15 @@ const App = () => {
     setUser(_user);
   }
 
-  // const logout = () => {
-  //   setLoggedIn(false);
-  // }
+  const logout = () => {
+    setUser(null);
+  }
 
-  // console.log(isLoggedIn)
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home user={user}/>} />
-        <Route path="/new-post" element={<NewPost user={user}/>} />
+        <Route path="/" element={<Home user={user} logout={logout} />} />
+        <Route path="/new-post" element={<NewPost user={user} logout={logout}/>} />
 
         <Route path="/login" element={<Login login={login} />} />
       </Routes>
