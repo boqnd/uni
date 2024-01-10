@@ -1,28 +1,21 @@
+// Cart.js
 import React, { useState, useEffect } from 'react';
-import CartItem from './CartItem';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
+import CartItem from './CartItem';
+import CheckoutForm from './CheckoutForm';
 
-
-const Cart = ({user, logout}) => {
+const Cart = ({ user, logout, cartItems }) => {
   const navigate = useNavigate();
+  const [isPaid, setIsPaid] = useState(false);
+
   useEffect(() => {
     if (!user) navigate('/login');
-  }, [user, navigate])
+  }, [user, navigate]);
 
-  // Simulated cart items (replace with actual cart data)
-  const [cartItems, setCartItems] = useState([
-    {
-      name: 'Example Product 1',
-      price: 19.99,
-      image: 'https://placekitten.com/80/80', // Replace with actual image URL
-    },
-    {
-      name: 'Example Product 2',
-      price: 29.99,
-      image: 'https://placekitten.com/80/80', // Replace with actual image URL
-    },
-  ]);
+  const handleCheckout = () => {
+    setIsPaid(true);
+  };
 
   return (
     <div>
@@ -32,9 +25,16 @@ const Cart = ({user, logout}) => {
         {cartItems.map((item, index) => (
           <CartItem key={index} item={item} />
         ))}
+        {!isPaid ? (
+          <div style={styles.paymentSection}>
+            <h3>Payment Details</h3>
+            <CheckoutForm />
+          </div>
+        ) : (
+          <p style={styles.paymentSuccess}>Payment successful! Your order is being processed.</p>
+        )}
       </div>
     </div>
-
   );
 };
 
@@ -49,6 +49,22 @@ const styles = {
     fontSize: '24px',
     fontWeight: 'bold',
     marginBottom: '20px',
+  },
+  paymentSection: {
+    marginTop: '20px',
+  },
+  checkoutButton: {
+    padding: '12px',
+    backgroundColor: '#3498db',
+    color: 'white',
+    borderRadius: '4px',
+    cursor: 'pointer',
+    border: 'none',
+    marginTop: '10px',
+  },
+  paymentSuccess: {
+    fontSize: '18px',
+    color: '#27ae60',
   },
 };
 

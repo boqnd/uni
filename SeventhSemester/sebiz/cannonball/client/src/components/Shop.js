@@ -4,7 +4,9 @@ import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 
 
-const Shop = ({user, logout}) => {
+const Shop = ({user, logout, addToCart}) => {
+  // console.log(addToCart)
+
   const navigate = useNavigate();
   useEffect(() => {
     if (!user) navigate('/login');
@@ -22,7 +24,7 @@ const Shop = ({user, logout}) => {
       <Header user={user} logout={logout} />
       <div style={styles.container}>
         <h2 style={styles.heading}>Shop</h2>
-        <Product product={productData} />
+        <Product product={productData} addToCart={addToCart} />
       </div>
     </div>
 
