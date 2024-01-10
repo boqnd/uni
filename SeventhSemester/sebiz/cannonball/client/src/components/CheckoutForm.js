@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
-const CheckoutForm = () => {
+const CheckoutForm = ({user, cartItems, handleCheckout}) => {
   const stripe = useStripe();
   const elements = useElements();
   const [orderDetails, setOrderDetails] = useState({
@@ -38,6 +38,24 @@ const CheckoutForm = () => {
       // Send the token and order details to your server
       console.log('Token:', token);
       console.log('Order Details:', orderDetails);
+
+      const response = await fetch('http://localhost:4000/orders/createOrder', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              userId: user._id,
+              products: cartItems,
+              ...orderDetails
+          }),
+        });
+
+        if (response) {
+          handleCheckout();
+        } else {
+          console.log(response)
+        }
     }
   };
 

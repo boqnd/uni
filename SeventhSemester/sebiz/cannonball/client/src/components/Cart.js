@@ -28,7 +28,7 @@ const Cart = ({ user, logout, cartItems }) => {
         {!isPaid ? (
           <div style={styles.paymentSection}>
             <h3>Payment Details</h3>
-            <CheckoutForm />
+            <CheckoutForm user={user} cartItems={cartItems} handleCheckout={handleCheckout}/>
           </div>
         ) : (
           <p style={styles.paymentSuccess}>Payment successful! Your order is being processed.</p>

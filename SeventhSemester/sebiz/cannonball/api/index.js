@@ -12,6 +12,7 @@ import { createTrip, createTripRoute } from './requests/trips/createTrip.js';
 import { getPosts, getPostsRoute } from './requests/posts/getPosts.js';
 import { getPost, getPostRoute } from './requests/posts/getPost.js';
 import { createPost, createPostRoute } from './requests/posts/createPost.js';
+import { createOrder, createOrderRoute } from './requests/orders/createOrder.js';
 
 
 const app = express();
@@ -34,6 +35,7 @@ app.post(getPostsRoute, getPosts);
 app.post(getPostRoute, getPost);
 app.post(createPostRoute, createPost);
 
+app.post(createOrderRoute, createOrder);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
