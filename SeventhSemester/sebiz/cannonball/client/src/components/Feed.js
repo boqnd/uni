@@ -28,6 +28,7 @@ const Feed = () => {
                 'Content-Type': 'application/json',
               },
             });
+            console.log(userResponse)
             const userData = await userResponse.json();
 
             const tripResponse = await fetch(`http://localhost:4000/trips/getTrip/${post.tripId}`, {

@@ -5,18 +5,16 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Shop = ({user, logout, addToCart}) => {
-  // console.log(addToCart)
-
   const navigate = useNavigate();
   useEffect(() => {
     if (!user) navigate('/login');
   }, [user, navigate])
 
   const productData = {
-    name: 'Example Product',
-    description: 'This is an example product description.',
+    name: 'Устройство за верифициране на време',
+    description: 'С това устройство ще можете да публикувате верифицирани времена и всички потребители ще могат да бъдат сигурни че казвате истината',
     price: 19.99,
-    image: 'https://placekitten.com/300/200', // Replace with actual image URL
+    image: 'https://karaokeuk-static.myshopblocks.com/images/2023/02/contain/256x256/67dbbec796f07fd64d81f4059608b064.jpg',
   };
 
   return (
