@@ -7,9 +7,9 @@ export let transactionRoute = '/transaction';
 
 export async function transaction (req, res) {
   const { price } = req.body;
-
+  const total = (price*100).toFixed(0);
   const paymentIntent = await stripeInstance.paymentIntents.create({
-    amount: price*100,
+    amount: total,
     currency: 'usd',
   });
 

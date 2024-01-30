@@ -36,21 +36,9 @@ const CheckoutForm = ({user, cartItems, handleCheckout}) => {
       console.error(error);
     } else {
       // Send the token and order details to your server
-      console.log('Token:', token);
-      console.log('Order Details:', orderDetails);
-
-      const response = await fetch('http://localhost:4000/orders/createOrder', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            userId: user._id,
-            products: cartItems,
-            ...orderDetails
-        }),
-      });
-      
+      // console.log('Token:', token);
+      // console.log('Order Details:', orderDetails);
+      const total = cartItems.reduce((total, item) => total + item.quantity*item.price, 0).toFixed(2)
 
       const payment = await fetch('http://localhost:4000/transaction', {
         method: 'POST',
@@ -58,14 +46,26 @@ const CheckoutForm = ({user, cartItems, handleCheckout}) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          price: cartItems.reduce((total, item) => total + item.quantity*item.price, 0).toFixed(2)
+          price: total
         }),
       });
+      const paymentBody = await payment.json();
 
-      if (response && payment) {
-        handleCheckout();
-      } else {
-        console.log(response)
+      if (payment) {
+        const response = await fetch('http://localhost:4000/orders/createOrder', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+              userId: user._id,
+              products: cartItems,
+              transaction: paymentBody.clientSecret,
+              ...orderDetails
+          }),
+        });
+
+        if (response) handleCheckout();
       }
     }
   };
