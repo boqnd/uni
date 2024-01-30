@@ -23,13 +23,17 @@ const App = () => {
     setCart(oldCart => [...oldCart, item])
   }
 
+  const clearCart = () => {
+    setCart([])
+  }
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home user={user} logout={logout} />} />
         <Route path="/new-post" element={<NewPost user={user} logout={logout}/>} />
         <Route path="/shop" element={<Shop user={user} logout={logout} addToCart={addToCart} />} />
-        <Route path="/cart" element={<Cart user={user} logout={logout} cartItems={cart} />} />
+        <Route path="/cart" element={<Cart user={user} logout={logout} cartItems={cart} clearCart={clearCart} />} />
 
         <Route path="/login" element={<Login login={login} />} />
         <Route path="/register" element={<Register />} />

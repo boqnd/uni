@@ -5,7 +5,7 @@ import Header from './Header';
 import CartItem from './CartItem';
 import CheckoutForm from './CheckoutForm';
 
-const Cart = ({ user, logout, cartItems }) => {
+const Cart = ({ user, logout, cartItems, clearCart }) => {
   const navigate = useNavigate();
   const [isPaid, setIsPaid] = useState(false);
 
@@ -15,6 +15,7 @@ const Cart = ({ user, logout, cartItems }) => {
 
   const handleCheckout = () => {
     setIsPaid(true);
+    clearCart();
   };
   console.log(cartItems.reduce((total, item) => total + item.quantity*item.price, 0))
   return (
