@@ -5,6 +5,7 @@ import Home from './components/Home';
 import NewPost from './components/NewPost';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
+import Register from './components/Register';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/cart" element={<Cart user={user} logout={logout} cartItems={cart} />} />
 
         <Route path="/login" element={<Login login={login} />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

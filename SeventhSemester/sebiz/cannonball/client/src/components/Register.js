@@ -1,73 +1,73 @@
+// Register.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import authService from '../services/authService';
 import { Link } from 'react-router-dom';
+import authService from '../services/authService';
+import { useNavigate } from 'react-router-dom';
 
-const Login = ({login}) => {
+const Register = () => {
   const [formData, setFormData] = useState({
     username: '',
+    email: '',
     password: '',
   });
 
-  const [loginFail, setLoginFail] = useState(false);
+  const [registerFail, setRegisterFail] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const user = await authService.login(formData);
-      if (user.length) {
-        login(user[0]);
-        navigate('/')
-      };
+      await authService.register(formData);
+      navigate('/')
     } catch (error) {
-      setLoginFail(true);
+      setRegisterFail(true);
     }
   };
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.heading}>Login</h2>
+      <h2>Register</h2>
       <form onSubmit={handleSubmit} style={styles.form}>
-        <label style={styles.label}>
+        <label>
           Username:
           <input
             type="text"
             name="username"
             value={formData.username}
             onChange={handleChange}
+            required
             style={styles.input}
           />
         </label>
-        <br />
-        <label style={styles.label}>
+        <label>
           Password:
           <input
             type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
+            required
             style={styles.input}
           />
         </label>
         <br />
-        {loginFail && <p style={styles.loginFail}>Login fail!</p>}
+        {registerFail && <p style={styles.loginFail}>Register fail!</p>}
         <button type="submit" style={styles.button}>
-          Login
+          Register
         </button>
       </form>
       <p>
-        Don't have an account? <Link to="/register">Register</Link>
+        Already have an account? <Link to="/login">Login</Link>
       </p>
     </div>
   );
@@ -78,34 +78,28 @@ const styles = {
     maxWidth: '400px',
     margin: 'auto',
     padding: '20px',
-    border: '1px solid #ccc',
+    backgroundColor: '#f5f5f5',
     borderRadius: '8px',
-    marginTop: '50px',
-  },
-  heading: {
-    textAlign: 'center',
-    color: '#333',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
   },
-  label: {
-    margin: '10px 0',
-  },
   input: {
-    padding: '8px',
-    margin: '5px 0',
+    padding: '10px',
+    fontSize: '14px',
+    marginBottom: '10px',
+    border: '1px solid #ddd',
     borderRadius: '4px',
-    border: '1px solid #ccc',
   },
   button: {
-    background: '#4CAF50',
+    padding: '12px',
+    backgroundColor: '#3498db',
     color: 'white',
-    padding: '10px',
     borderRadius: '4px',
-    border: 'none',
     cursor: 'pointer',
+    border: 'none',
   },
   loginFail: {
     background: 'white',
@@ -117,4 +111,4 @@ const styles = {
   }
 };
 
-export default Login;
+export default Register;
