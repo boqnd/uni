@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Product from './Product';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
@@ -10,19 +10,37 @@ const Shop = ({user, logout, addToCart}) => {
     if (!user) navigate('/login');
   }, [user, navigate])
 
-  const productData = {
-    name: 'Устройство за верифициране на време',
-    description: 'С това устройство ще можете да публикувате верифицирани времена и всички потребители ще могат да бъдат сигурни че казвате истината',
-    price: 19.99,
-    image: 'https://karaokeuk-static.myshopblocks.com/images/2023/02/contain/256x256/67dbbec796f07fd64d81f4059608b064.jpg',
-  };
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        // Fetch posts
+        const productsResponse = await fetch('http://localhost:4000/products/getProducts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            // Add any necessary parameters here
+          }),
+        });
+        const productsData = await productsResponse.json();
+        setProducts(productsData);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   return (
     <div>
       <Header user={user} logout={logout} />
       <div style={styles.container}>
         <h2 style={styles.heading}>Shop</h2>
-        <Product product={productData} addToCart={addToCart} />
+        {products.map(p => <Product product={p} addToCart={addToCart} /> )}
       </div>
     </div>
 
