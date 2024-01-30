@@ -16,7 +16,7 @@ const Cart = ({ user, logout, cartItems }) => {
   const handleCheckout = () => {
     setIsPaid(true);
   };
-
+  console.log(cartItems.reduce((total, item) => total + item.quantity*item.price, 0))
   return (
     <div>
       <Header user={user} logout={logout} />
@@ -25,6 +25,7 @@ const Cart = ({ user, logout, cartItems }) => {
         {cartItems.map((item, index) => (
           <CartItem key={index} item={item} />
         ))}
+        <p>Total: ${cartItems.reduce((total, item) => total + item.quantity*item.price, 0).toFixed(2)}</p>
         {!isPaid ? (
           <div style={styles.paymentSection}>
             <h3>Payment Details</h3>

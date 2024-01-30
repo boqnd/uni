@@ -10,7 +10,8 @@ export async function createOrder (req, res) {
     const user = await usersDao?.getOne(userId);
     if (!user) res.status(400).send('User doesnt exist');
     else {
-      const order = await ordersDao?.insert({userId, name, email, address, products});
+      const total = products.reduce((total, item) => total + item.quantity*item.price, 0).toFixed(2);
+      const order = await ordersDao?.insert({userId, name, email, address, products, total});
       res.send(order);
     }
   }
