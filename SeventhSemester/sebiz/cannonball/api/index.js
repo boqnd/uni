@@ -16,6 +16,7 @@ import { createOrder, createOrderRoute } from './requests/orders/createOrder.js'
 import { getProduct, getProductRoute } from './requests/products/getProduct.js';
 import { getProducts, getProductsRoute } from './requests/products/getProducts.js';
 import { createProduct, createProductRoute } from './requests/products/createProduct.js';
+import { transaction, transactionRoute } from './requests/transactions/transaction.js';
 
 
 const app = express();
@@ -43,6 +44,8 @@ app.post(createOrderRoute, createOrder);
 app.post(getProductRoute, getProduct);
 app.post(getProductsRoute, getProducts);
 app.post(createProductRoute, createProduct);
+
+app.post(transactionRoute, transaction);
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);

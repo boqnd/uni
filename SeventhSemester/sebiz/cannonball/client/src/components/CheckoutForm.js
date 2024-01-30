@@ -40,22 +40,33 @@ const CheckoutForm = ({user, cartItems, handleCheckout}) => {
       console.log('Order Details:', orderDetails);
 
       const response = await fetch('http://localhost:4000/orders/createOrder', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-              userId: user._id,
-              products: cartItems,
-              ...orderDetails
-          }),
-        });
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            userId: user._id,
+            products: cartItems,
+            ...orderDetails
+        }),
+      });
+      
 
-        if (response) {
-          handleCheckout();
-        } else {
-          console.log(response)
-        }
+      const payment = await fetch('http://localhost:4000/transaction', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          price: cartItems.reduce((total, item) => total + item.quantity*item.price, 0).toFixed(2)
+        }),
+      });
+
+      if (response && payment) {
+        handleCheckout();
+      } else {
+        console.log(response)
+      }
     }
   };
 
